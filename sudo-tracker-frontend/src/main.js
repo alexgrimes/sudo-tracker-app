@@ -1,5 +1,6 @@
 const habitsContainer = document.querySelector(".habits-ul");
 const userNameContainer = document.querySelector("#user-name");
+
 function main() {
   fetchUserData();
 }
@@ -12,6 +13,10 @@ function fetchUserData() {
 
 function renderUserData(userData) {
   userNameContainer.innerHTML = userData.name;
+  renderUserHabits(userData);
+}
+
+function renderUserHabits(userData) {
   userData.habits.forEach((habit) => {
     habitsContainer.innerHTML += `
       <li>${habit.name}</li>
