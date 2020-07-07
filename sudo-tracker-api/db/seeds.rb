@@ -1,7 +1,27 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+require 'faker'
+
+User.destroy_all
+Habit.destroy_all
+UserHabit.destroy_all
+
+# USER DATA 
+User.create(name: 'Emilio', email_address: 'emilioquintana90@gmail.com', age: 22, img_url: 'www.nicepicture.com/1')
+
+# HABIT DATA
+Habit.create(name: 'Meditation', description: 'A nice habit!')
+UserHabit.create(user_id: User.first.id, habit_id: Habit.last.id, straight_days: 0)
+
+Habit.create(name: 'Fasting', description: 'A nice habit!')
+UserHabit.create(user_id: User.first.id, habit_id: Habit.last.id, straight_days: 0)
+
+Habit.create(name: 'Workout', description: 'A nice habit!')
+UserHabit.create(user_id: User.first.id, habit_id: Habit.last.id, straight_days: 0)
+
+Habit.create(name: 'Mandarin', description: 'A nice habit!')
+UserHabit.create(user_id: User.first.id, habit_id: Habit.last.id, straight_days: 0)
+
+Habit.create(name: 'Cooking', description: 'A nice habit!')
+UserHabit.create(user_id: User.first.id, habit_id: Habit.last.id, straight_days: 0)
+
+
+
