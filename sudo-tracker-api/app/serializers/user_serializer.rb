@@ -9,7 +9,8 @@ class UserSerializer < ActiveModel::Serializer
     @object.user_habits.map { |userHabit|
       {
         name: userHabit.habit.name,
-        straight_days: userHabit.straight_days
+        straight_days: userHabit.straight_days,
+        user_habit_id: userHabit.id
       }
     }
   end

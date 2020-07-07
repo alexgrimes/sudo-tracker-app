@@ -1,5 +1,6 @@
 let addHabit = false;
 let addFriend = false;
+let login = true;
 const habitsContainer = document.querySelector(".habits-ul");
 const friendsContainer = document.querySelector(".friends-ul");
 const userNameContainer = document.querySelector(".name-container");
@@ -14,6 +15,14 @@ const loginForm = document.querySelector(".login-form");
 
 function main() {}
 
+function toggleLoginForm(){
+  login = false;
+  if (login === false) {
+    loginForm.style.display = "none";
+  }
+}
+
+
 function fetchUserData(email) {
   configObj = {
     method: "POST",
@@ -27,6 +36,7 @@ function fetchUserData(email) {
   fetch("http://localhost:3000/users/login", configObj)
     .then((resp) => resp.json())
     .then((userData) => {
+      toggleLoginForm();
       renderUserData(userData);
     })
     .catch((err) => console.log(err));
@@ -48,14 +58,16 @@ function renderFriends(userData) {
   });
 }
 function renderHabits(userData) {
+  let count = 0
   userData.user_habits.forEach((habit) => {
     habitsContainer.innerHTML += `
-      <li data-habit-id=${habit.id}>${habit.name}</li>
+      <li id=${count} data-user-id=${habit.user_habit_id}>${habit.name}</li>
     `;
 
     daysStraightContainer.innerHTML += `
       <li>${habit.straight_days}</li>
     `;
+    count ++ 
   });
 }
 
@@ -99,6 +111,8 @@ function newFriendHandler() {
 }
 
 function submitNewFriend(email) {
+  const userId = userNameContainer.children[0].dataset.userId;
+
   configObj = {
     method: "POST",
     headers: {
@@ -106,6 +120,7 @@ function submitNewFriend(email) {
     },
     body: JSON.stringify({
       email: email,
+      id: userId
     }),
   };
   fetch("http://localhost:3000/friendships", configObj)
@@ -146,12 +161,31 @@ function submitNewHabit(habitName, habitDescription) {
     .catch((err) => console.log(err));
 }
 
+
+function addDaysStraight(){
+  if (event.target.nodeName === 'LI') {
+    updateDaysStraight(event)
+  }
+}
+
+function updateDaysStraight(event){
+  const index = parseInt(event.target.id)
+  const daysStraight = document.querySelector('.days-straight-ul').children[index].value
+  
+  //fetch request 4/8
+
+}
+
+
+
+
 ///////////////////EVENT LISTENERS///////////////////////
 addHabitButton.addEventListener("click", toggleFormHandler);
 addFriendButton.addEventListener("click", toggleFriendHandler);
 addHabitForm.addEventListener("submit", newHabitHandler);
 addFriendForm.addEventListener("submit", newFriendHandler);
 loginForm.addEventListener("submit", loginHandler);
+habitsContainer.addEventListener("click", addDaysStraight)
 
 ///////////////////INVOCATIONS///////////////////////
 main();
