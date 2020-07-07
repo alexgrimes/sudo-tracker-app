@@ -12,3 +12,8 @@
   display: table;
   clear: both;
 }
+
+.add-habit-form,
+.add-friend-form {
+  display: none;
+}

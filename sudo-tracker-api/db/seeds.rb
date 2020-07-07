@@ -3,6 +3,7 @@ require 'faker'
 User.destroy_all
 Habit.destroy_all
 UserHabit.destroy_all
+Friendship.destroy_all
 
 # USER DATA 
 User.create(name: 'Emilio', email_address: 'emilioquintana90@gmail.com', age: 22, img_url: 'www.nicepicture.com/1')
@@ -25,5 +26,5 @@ Habit.create(name: 'Cooking', description: 'A nice habit!')
 UserHabit.create(user_id: User.first.id, habit_id: Habit.last.id, straight_days: 0)
 
 # FRIENDSHIP DATA
-Friendship.create(user_1_id: User.last.id, user_2_id: User.first.id)
+
 

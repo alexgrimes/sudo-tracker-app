@@ -25,13 +25,26 @@
   <body>
     <header>
       <div class="page-header">
-        <h1 class="display-4" id="user-name">
-          John
-        </h1>
+        <div class="name-container"></div>
       </div>
     </header>
 
-    <body>
+    <main>
+      <form class="login-form">
+        <input
+          type="text"
+          name="email"
+          value=""
+          placeholder="Enter your email..."
+          class="input-text"
+        />
+        <br />
+        <br />
+        <input type="submit" name="submit" value="Sign in" class="submit" />
+        <br />
+        <br />
+      </form>
+
       <div class="row">
         <div class="column">
           <h4>Current Goals:</h4>
@@ -49,8 +62,11 @@
         </div>
       </div>
 
-      <button class="add-habit-button">"Add Habit"</button>
-    </body>
+      <button class="add-habit-button">Add Habit</button>
+      <br />
+      <br />
+      <button class="add-friend-button">Add Friend</button>
+    </main>
 
     <form class="add-habit-form">
       <h3>Begin a new habit</h3>
@@ -68,6 +84,25 @@
         name="description"
         value=""
         placeholder="Enter description"
+        class="input-text"
+      />
+      <br />
+      <input
+        type="submit"
+        name="submit"
+        value="Create New Habit"
+        class="submit"
+      />
+    </form>
+
+    <form class="add-friend-form">
+      <h3>Begin a new friend</h3>
+
+      <input
+        type="text"
+        name="email"
+        value=""
+        placeholder="Enter friend's email address"
         class="input-text"
       />
       <br />
