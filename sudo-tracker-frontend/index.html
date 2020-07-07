@@ -32,8 +32,37 @@
     <main>
       <h5>Current Goals:</h5>
       <ul class="habits-ul"></ul>
+      <ul class="days-straight-ul"></ul>
+      <button class="add-habit-button">"Add Habit"</button>
     </main>
 
-    <script src="./src/main.js"></script>
+    <form class="add-habit-form">
+      <h3>Begin a new habit</h3>
+
+      <input
+        type="text"
+        name="name"
+        value=""
+        placeholder="Enter habit..."
+        class="input-text"
+      />
+      <br />
+      <input
+        type="text"
+        name="description"
+        value=""
+        placeholder="Enter description"
+        class="input-text"
+      />
+      <br/>
+      <input
+          type="submit"
+          name="submit"
+          value="Create New Habit"
+          class="submit"
+        />
+    </form>
+
+    <script defer src="./src/main.js"></script>
   </body>
 </html>
