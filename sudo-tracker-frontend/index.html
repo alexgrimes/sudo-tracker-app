@@ -10,110 +10,174 @@
       integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
       crossorigin="anonymous"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <header>
+    <div class="page-header">
+      <div class="name-container">
+        <h1>Welcome</h1>
+      </div>
+      <hr />
+    </div>
+  </header>
+
+  <body>
+    <main>
+      <div
+        class="modal fade"
+        id="loginModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2 class="modal-title" id="exampleModalLabel">
+                Welcome to Sudo Tracker!
+              </h2>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form class="login-form">
+                <div class="form-group">
+                  <label for="recipient-name" class="col-form-label"
+                    >Email:</label
+                  >
+                  <input
+                    type="text"
+                    name="email"
+                    class="form-control"
+                    id="recipient-name"
+                  />
+                </div>
+
+                <input
+                  type="submit"
+                  name="submit"
+                  value="Sign in"
+                  class="btn btn-primary btn-lg btn-block"
+                />
+                <br />
+              </form>
+            </div>
+            <div class="modal-footer">
+              <p>Developed by Emilio Quintana and Alex Grimes &copy; 2020</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <button class="btn btn-primary btn-lg" id="add-habit-button">
+            Add Habit
+          </button>
+          <br />
+          <br />
+          <button class="btn btn-primary btn-lg" id="add-friend-button">
+            Add Friend
+          </button>
+        </div>
+
+        <div class="col">
+          <h5>CURRENT GOALS</h5>
+          <ul class="habits-ul" style="list-style: none;"></ul>
+          <table class="table">
+            <tbody id="habits-table"></tbody>
+          </table>
+        </div>
+
+        <div class="col">
+          <h5>DAYS STRAIGHT</h5>
+          <table class="table">
+            <tbody id="days-straight-table"></tbody>
+          </table>
+          <ul class="days-straight-ul" style="list-style: none;"></ul>
+        </div>
+
+        <div class="col">
+          <h5>FRIENDS WATCHOUT</h5>
+          <table class="table">
+            <tbody id="friends-table"></tbody>
+          </table>
+          <ul class="friends-ul" style="list-style: none;"></ul>
+        </div>
+      </div>
+    </main>
+    <div class="forms">
+      <br />
+      <form class="add-habit-form">
+        <input
+          type="text"
+          name="name"
+          value=""
+          placeholder="Enter habit..."
+          class="form-control"
+        />
+        <br />
+        <input
+          type="text"
+          name="description"
+          value=""
+          placeholder="Enter description"
+          class="form-control"
+        />
+        <br />
+
+        <input
+          type="submit"
+          name="submit"
+          value="Create New Habit"
+          class="btn btn-primary"
+        />
+      </form>
+      <br />
+      <form class="add-friend-form">
+        <input
+          type="text"
+          name="email"
+          value=""
+          placeholder="Enter friend's email address"
+          class="form-control"
+        />
+        <br />
+        <input
+          type="submit"
+          name="submit"
+          value="Add Friend"
+          class="btn btn-primary"
+        />
+      </form>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
     <script
       src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
       integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
       crossorigin="anonymous"
     ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"
-      integrity="sha384-1CmrxMRARb6aLqgBO7yyAxTOQE2AKb9GfXnEo760AUcUmFx3ibVJJAzGytlQcNXd"
-      crossorigin="anonymous"
-    ></script>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header>
-      <div class="page-header">
-        <div class="name-container"></div>
-      </div>
-    </header>
-
-    <main>
-      <form class="login-form">
-        <input
-          type="text"
-          name="email"
-          value=""
-          placeholder="Enter your email..."
-          class="input-text"
-        />
-        <br />
-        <br />
-        <input type="submit" name="submit" value="Sign in" class="submit" />
-        <br />
-        <br />
-      </form>
-
-      <div class="row">
-        <div class="column">
-          <h4>Current Goals:</h4>
-          <ul class="habits-ul"></ul>
-        </div>
-
-        <div class="column">
-          <h4>Days Straight:</h4>
-          <ul class="days-straight-ul"></ul>
-        </div>
-
-        <div class="column">
-          <h4>Friends Watchout:</h4>
-          <ul class="friends-ul"></ul>
-        </div>
-      </div>
-
-      <button class="add-habit-button">Add Habit</button>
-      <br />
-      <br />
-      <button class="add-friend-button">Add Friend</button>
-    </main>
-
-    <form class="add-habit-form">
-      <h3>Begin a new habit</h3>
-
-      <input
-        type="text"
-        name="name"
-        value=""
-        placeholder="Enter habit..."
-        class="input-text"
-      />
-      <br />
-      <input
-        type="text"
-        name="description"
-        value=""
-        placeholder="Enter description"
-        class="input-text"
-      />
-      <br />
-      <input
-        type="submit"
-        name="submit"
-        value="Create New Habit"
-        class="submit"
-      />
-    </form>
-
-    <form class="add-friend-form">
-      <h3>Begin a new friend</h3>
-
-      <input
-        type="text"
-        name="email"
-        value=""
-        placeholder="Enter friend's email address"
-        class="input-text"
-      />
-      <br />
-      <input
-        type="submit"
-        name="submit"
-        value="Add Friend"
-        class="submit"
-      />
-    </form>
-
     <script defer src="./src/main.js"></script>
   </body>
 </html>

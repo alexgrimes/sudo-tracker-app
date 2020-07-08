@@ -1,20 +1,38 @@
 let addHabit = false;
 let addFriend = false;
-let login = true;
-const habitsContainer = document.querySelector(".habits-ul");
-const friendsContainer = document.querySelector(".friends-ul");
+let modalOpen = true;
+
+///// CONTAINERS /////
+const habitsContainer = document.querySelector("#habits-table");
+const friendsContainer = document.querySelector("#friends-table");
 const userNameContainer = document.querySelector(".name-container");
-const daysStraightContainer = document.querySelector(".days-straight-ul");
-const addHabitButton = document.querySelector(".add-habit-button");
-const addFriendButton = document.querySelector(".add-friend-button");
+const daysStraightContainer = document.querySelector("#days-straight-table");
+
+///// BUTTONS /////
+const addHabitButton = document.querySelector("#add-habit-button");
+const addFriendButton = document.querySelector("#add-friend-button");
+
+///// FORMS /////
 const addHabitForm = document.querySelector(".add-habit-form");
 const addFriendForm = document.querySelector(".add-friend-form");
 const loginForm = document.querySelector(".login-form");
-let email_address = '';
-///////////////////FUNCTIONS///////////////////////
 
-function main() {}
+///// MISC /////
+let email_address = "";
 
+///////////////////MAIN///////////////////////
+
+function main() {
+  modalHandler();
+}
+
+function modalHandler() {
+  if (modalOpen) {
+    $("#loginModal").modal("show");
+  } else {
+    $("#loginModal").modal("hide");
+  }
+}
 function toggleLoginForm() {
   login = false;
   if (login === false) {
@@ -22,8 +40,9 @@ function toggleLoginForm() {
   }
 }
 
+///// FETCHING && RENDERING FUNCTIONS /////
 function fetchUserData(email) {
-  email_address = email
+  email_address = email;
   configObj = {
     method: "POST",
     headers: {
@@ -44,7 +63,7 @@ function fetchUserData(email) {
 
 function renderUserData(userData) {
   userNameContainer.innerHTML = `
-  <h1 data-user-id=${userData.id}>${userData.name}</h1>
+  <h1 data-user-id=${userData.id}>Welcome, ${userData.name}!</h1>
   `;
   renderHabits(userData);
   renderFriends(userData);
@@ -53,25 +72,38 @@ function renderUserData(userData) {
 function renderFriends(userData) {
   userData.accepted_relationships.forEach((friend) => {
     friendsContainer.innerHTML += `
-    <li>${friend.name}</li><p>${friend.straight_days}</p>
+    <tr><td>${friend.name}</td></tr>
     `;
   });
 }
 function renderHabits(userData) {
-  let count = 0;
+  let index = 0;
   userData.user_habits.forEach((habit) => {
     habitsContainer.innerHTML += `
-      <li id=${count} data-user-id=${habit.user_habit_id}>${habit.name}</li><button data-habit-id=${habit.habit_id} class='btn-delete'>Delete</button>
+        <tr><td id=${index} data-user-habit-id=${habit.user_habit_id}>${habit.name}</td> </tr>
     `;
 
+    // <button data-habit-id=${habit.habit_id} id='btn-delete' class="btn btn-danger">Delete</button>
+    debugger;
     daysStraightContainer.innerHTML += `
-      <li>${habit.straight_days}</li>
+      <tr><td>${habit.straight_days}</td></tr>
     `;
-    count++;
+    index++;
   });
 }
 
-function toggleFormHandler() {
+////// FORM HANDLERS /////
+
+function loginHandler() {
+  event.preventDefault();
+  const email = event.target["email"].value;
+  modalOpen = false;
+  modalHandler();
+  fetchUserData(email);
+  event.target.reset();
+}
+
+function toggleHabitHandler() {
   addHabit = !addHabit;
   if (addHabit) {
     addHabitForm.style.display = "block";
@@ -88,12 +120,8 @@ function toggleFriendHandler() {
     addFriendForm.style.display = "none";
   }
 }
-function loginHandler() {
-  event.preventDefault();
-  const email = event.target["email"].value;
-  fetchUserData(email);
-  event.target.reset();
-}
+
+////// FROM SCRAPING FUNCTIONS /////
 
 function newHabitHandler() {
   event.preventDefault();
@@ -110,6 +138,8 @@ function newFriendHandler() {
   event.target.reset();
 }
 
+///// NEW/CREATE FUNCTIONS /////
+
 function submitNewFriend(email) {
   const userId = userNameContainer.children[0].dataset.userId;
 
@@ -123,11 +153,12 @@ function submitNewFriend(email) {
       id: userId,
     }),
   };
+
   fetch("http://localhost:3000/friendships", configObj)
     .then((resp) => resp.json())
     .then((friend) => {
       friendsContainer.innerHTML += `
-    <li>${friend.name}</li>
+      <tr><td>${friend.name}</td></tr>
     `;
     })
     .catch((err) => console.log(err));
@@ -149,56 +180,53 @@ function submitNewHabit(habitName, habitDescription) {
   };
 
   fetch("http://localhost:3000/habits", configObj)
-    .then(resp => resp.json())
-    .then(habit => { 
-      debugger
-      const index = parseInt(habitsContainer.children[habitsContainer.children.length - 2].id) + 1;
+    .then((resp) => resp.json())
+    .then((habit) => {
+      debugger;
+      const index = habitsContainer.children.length;
+
       habitsContainer.innerHTML += `
-      <li id=${index} data-user-id=${habit.user_habit_id}>${habit.name}</li><button data-habit-id=${habit.id} class='btn-delete'>Delete</button>
+      <tr><td id=${index} data-user-habit-id=${habit.user_habit_id}>${habit.name}</td></tr>
     `;
 
-    daysStraightContainer.innerHTML += `
-      <li>${habit.straight_days}</li>
+      daysStraightContainer.innerHTML += `
+      <tr><td>${habit.straight_days}</td></tr>
     `;
+
+      // <button data-habit-id=${habit.id}  class="btn btn-danger" id='btn-delete'>Delete</button>
       console.log(habit);
     })
-    .catch(err => console.log(err));
+    .catch((err) => console.log(err));
 }
 
-function addDaysStraight() {
-  if (event.target.nodeName === "LI") {
-    updateDaysStraight(event);
-  }
-  if (event.target.className === 'btn-delete') {
-    deleteHabit(event);
-  }
-}
-
+//// DELETE FUNCTIONS /////
 function deleteHabit(event) {
-  const habitId = parseInt(event.target.dataset.habitId)
-  return fetch(`http://localhost:3000/habits/${habitId}`, {method: 'DELETE'})
-  .then(resp => resp.json())
-  .then(habit => {
-    const index = parseInt(event.target.previousElementSibling.id);
-    const liElement = daysStraightContainer.children[index];
-    liElement.remove();
-    event.target.previousElementSibling.remove();
-    event.target.remove();
-  })
-  .catch(err => console.log(err))
+  const habitId = parseInt(event.target.dataset.habitId);
+  return fetch(`http://localhost:3000/habits/${habitId}`, { method: "DELETE" })
+    .then((resp) => resp.json())
+    .then((habit) => {
+      const index = parseInt(event.target.previousElementSibling.id);
+      const liElement = daysStraightContainer.children[index];
+      liElement.remove();
+      event.target.previousElementSibling.remove();
+      event.target.remove();
+    })
+    .catch((err) => console.log(err));
 }
 
+//// UPDATE FUNCTIONS /////
 function updateDaysStraight(event) {
   // Get index of item clicked
   const index = parseInt(event.target.id);
   // Use the index to get the days straight count and add one to it
-  const liElement = daysStraightContainer.children[index];
+  const tdElement = daysStraightContainer.children[index].firstElementChild;
   // Compute the new value
-  const newValue = parseInt(liElement.innerHTML) + 1;
+  const newValue = parseInt(tdElement.innerText) + 1;
+
   // Update the front end
-  liElement.innerHTML = newValue;
+  tdElement.innerHTML = newValue;
   // Get the userHabit Id in order to update backend
-  const userHabitId = parseInt(event.target.dataset.userId);
+  const userHabitId = parseInt(event.target.dataset.userHabitId);
   // Update front end
 
   let configObj = {
@@ -217,8 +245,18 @@ function updateDaysStraight(event) {
     .catch((error) => console.log(error.message));
 }
 
+///// EVENT HANDLERS FUNCTIONS
+function addDaysStraight() {
+  if (event.target.nodeName === "TD") {
+    updateDaysStraight(event);
+  }
+  if (event.target.id === "btn-delete") {
+    deleteHabit(event);
+  }
+}
+
 ///////////////////EVENT LISTENERS///////////////////////
-addHabitButton.addEventListener("click", toggleFormHandler);
+addHabitButton.addEventListener("click", toggleHabitHandler);
 addFriendButton.addEventListener("click", toggleFriendHandler);
 addHabitForm.addEventListener("submit", newHabitHandler);
 addFriendForm.addEventListener("submit", newFriendHandler);

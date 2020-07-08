@@ -28,5 +28,5 @@ Habit.create(name: 'Cooking', description: 'A nice habit!')
 UserHabit.create(user_id: User.first.id, habit_id: Habit.last.id, straight_days: 0)
 
 # FRIENDSHIP DATA
-Friendship.create(user_1_id: alex.id, user_2_id: emilio.id)
+
 

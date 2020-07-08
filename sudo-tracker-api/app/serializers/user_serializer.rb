@@ -1,5 +1,5 @@
 class UserSerializer < ActiveModel::Serializer
-  attributes :id, :name, :user_habits, :accepted_relationships
+  attributes :id, :name, :user_habits, :accepted_relationships, :straight_days
 
   def accepted_relationships 
     @object.accepted_relationships.map { |relationship| 
@@ -20,6 +20,11 @@ class UserSerializer < ActiveModel::Serializer
         habit_id: userHabit.habit_id.to_i
       }
     }
+  end
+
+  def straight_days
+    user_habit = @object.user_habits.max_by {|user_habit| user_habit.straight_days}
+    user_habit.straight_days
   end
 
 end

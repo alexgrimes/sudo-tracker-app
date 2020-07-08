@@ -10,6 +10,6 @@ class HabitsController < ApplicationController
     userHabit = UserHabit.find_by(habit_id: params[:id])
     habit.destroy
     userHabit.destroy
-    render json: habit
+    render json: {message: 'Habit destroyed!'}
   end 
 end

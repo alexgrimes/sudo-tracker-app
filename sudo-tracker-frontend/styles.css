@@ -1,16 +1,45 @@
-.column {
-  float: left;
-  width: 33.33%;
+/*  HEADER STYLE  */
+
+header {
+  background-color: #007bff;
+}
+
+.name-container {
+  height: 75px;
+}
+
+.name-container h1 {
+  margin-left: 3%;
+  padding-top: 20px;
+  color: white;
+}
+
+/*  TABLE STYLE  */
+.tr {
+  display: inline;
+}
+
+/*  BODY STYLE  */
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
 }
 
 .row {
-  margin-left: 5px;
+  width: 75%;
+  text-align: center;
 }
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
+
+li {
+  font-size: 20px;
+}
+
+/*  FORMS STYLE  */
+
+.forms {
+  width: 35%;
+  margin-left: 50px;
 }
 
 .add-habit-form,
