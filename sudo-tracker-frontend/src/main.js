@@ -10,7 +10,7 @@ const addFriendButton = document.querySelector(".add-friend-button");
 const addHabitForm = document.querySelector(".add-habit-form");
 const addFriendForm = document.querySelector(".add-friend-form");
 const loginForm = document.querySelector(".login-form");
-
+let email_address = '';
 ///////////////////FUNCTIONS///////////////////////
 
 function main() {}
@@ -23,6 +23,7 @@ function toggleLoginForm() {
 }
 
 function fetchUserData(email) {
+  email_address = email
   configObj = {
     method: "POST",
     headers: {
@@ -54,14 +55,13 @@ function renderFriends(userData) {
     friendsContainer.innerHTML += `
     <li>${friend.name}</li><p>${friend.straight_days}</p>
     `;
-    debugger;
   });
 }
 function renderHabits(userData) {
   let count = 0;
   userData.user_habits.forEach((habit) => {
     habitsContainer.innerHTML += `
-      <li id=${count} data-user-id=${habit.user_habit_id}>${habit.name}</li>
+      <li id=${count} data-user-id=${habit.user_habit_id}>${habit.name}</li><button data-habit-id=${habit.habit_id} class='btn-delete'>Delete</button>
     `;
 
     daysStraightContainer.innerHTML += `
@@ -147,24 +147,45 @@ function submitNewHabit(habitName, habitDescription) {
       id: userId,
     }),
   };
+
   fetch("http://localhost:3000/habits", configObj)
-    .then((resp) => resp.json())
-    .then((habit) => {
+    .then(resp => resp.json())
+    .then(habit => { 
+      debugger
+      const index = parseInt(habitsContainer.children[habitsContainer.children.length - 2].id) + 1;
       habitsContainer.innerHTML += `
-      <li data-habit-id=${habit.id}>${habit.name}</li>
+      <li id=${index} data-user-id=${habit.user_habit_id}>${habit.name}</li><button data-habit-id=${habit.id} class='btn-delete'>Delete</button>
     `;
 
-      daysStraightContainer.innerHTML += `
-      <li>0</li>
+    daysStraightContainer.innerHTML += `
+      <li>${habit.straight_days}</li>
     `;
+      console.log(habit);
     })
-    .catch((err) => console.log(err));
+    .catch(err => console.log(err));
 }
 
 function addDaysStraight() {
   if (event.target.nodeName === "LI") {
     updateDaysStraight(event);
   }
+  if (event.target.className === 'btn-delete') {
+    deleteHabit(event);
+  }
+}
+
+function deleteHabit(event) {
+  const habitId = parseInt(event.target.dataset.habitId)
+  return fetch(`http://localhost:3000/habits/${habitId}`, {method: 'DELETE'})
+  .then(resp => resp.json())
+  .then(habit => {
+    const index = parseInt(event.target.previousElementSibling.id);
+    const liElement = daysStraightContainer.children[index];
+    liElement.remove();
+    event.target.previousElementSibling.remove();
+    event.target.remove();
+  })
+  .catch(err => console.log(err))
 }
 
 function updateDaysStraight(event) {

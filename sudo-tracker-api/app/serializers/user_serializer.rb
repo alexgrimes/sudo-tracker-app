@@ -16,7 +16,8 @@ class UserSerializer < ActiveModel::Serializer
       {
         name: userHabit.habit.name,
         straight_days: userHabit.straight_days,
-        user_habit_id: userHabit.id
+        user_habit_id: userHabit.id,
+        habit_id: userHabit.habit_id.to_i
       }
     }
   end
