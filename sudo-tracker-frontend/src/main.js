@@ -15,13 +15,12 @@ const loginForm = document.querySelector(".login-form");
 
 function main() {}
 
-function toggleLoginForm(){
+function toggleLoginForm() {
   login = false;
   if (login === false) {
     loginForm.style.display = "none";
   }
 }
-
 
 function fetchUserData(email) {
   configObj = {
@@ -53,12 +52,13 @@ function renderUserData(userData) {
 function renderFriends(userData) {
   userData.accepted_relationships.forEach((friend) => {
     friendsContainer.innerHTML += `
-    <li>${friend.name}</li>
+    <li>${friend.name}</li><p>${friend.straight_days}</p>
     `;
+    debugger;
   });
 }
 function renderHabits(userData) {
-  let count = 0
+  let count = 0;
   userData.user_habits.forEach((habit) => {
     habitsContainer.innerHTML += `
       <li id=${count} data-user-id=${habit.user_habit_id}>${habit.name}</li>
@@ -67,7 +67,7 @@ function renderHabits(userData) {
     daysStraightContainer.innerHTML += `
       <li>${habit.straight_days}</li>
     `;
-    count ++ 
+    count++;
   });
 }
 
@@ -120,7 +120,7 @@ function submitNewFriend(email) {
     },
     body: JSON.stringify({
       email: email,
-      id: userId
+      id: userId,
     }),
   };
   fetch("http://localhost:3000/friendships", configObj)
@@ -161,23 +161,40 @@ function submitNewHabit(habitName, habitDescription) {
     .catch((err) => console.log(err));
 }
 
-
-function addDaysStraight(){
-  if (event.target.nodeName === 'LI') {
-    updateDaysStraight(event)
+function addDaysStraight() {
+  if (event.target.nodeName === "LI") {
+    updateDaysStraight(event);
   }
 }
 
-function updateDaysStraight(event){
-  const index = parseInt(event.target.id)
-  const daysStraight = document.querySelector('.days-straight-ul').children[index].value
-  
-  //fetch request 4/8
+function updateDaysStraight(event) {
+  // Get index of item clicked
+  const index = parseInt(event.target.id);
+  // Use the index to get the days straight count and add one to it
+  const liElement = daysStraightContainer.children[index];
+  // Compute the new value
+  const newValue = parseInt(liElement.innerHTML) + 1;
+  // Update the front end
+  liElement.innerHTML = newValue;
+  // Get the userHabit Id in order to update backend
+  const userHabitId = parseInt(event.target.dataset.userId);
+  // Update front end
 
+  let configObj = {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ straight_days: newValue }),
+  };
+
+  fetch("http://localhost:3000/user_habits/" + "/" + userHabitId, configObj)
+    .then((resp) => resp.json())
+    .then((userHabit) => {
+      console.log(userHabit);
+    })
+    .catch((error) => console.log(error.message));
 }
-
-
-
 
 ///////////////////EVENT LISTENERS///////////////////////
 addHabitButton.addEventListener("click", toggleFormHandler);
@@ -185,7 +202,7 @@ addFriendButton.addEventListener("click", toggleFriendHandler);
 addHabitForm.addEventListener("submit", newHabitHandler);
 addFriendForm.addEventListener("submit", newFriendHandler);
 loginForm.addEventListener("submit", loginHandler);
-habitsContainer.addEventListener("click", addDaysStraight)
+habitsContainer.addEventListener("click", addDaysStraight);
 
 ///////////////////INVOCATIONS///////////////////////
 main();
