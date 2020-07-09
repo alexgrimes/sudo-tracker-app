@@ -1,10 +1,11 @@
 class UserSerializer < ActiveModel::Serializer
-  attributes :id, :name, :user_habits, :accepted_relationships, :straight_days
+attributes :id, :name,:img_url, :user_habits, :accepted_relationships, :straight_days
 
   def accepted_relationships 
     @object.accepted_relationships.map { |relationship| 
       max_value = relationship.user_1.user_habits.max_by {|user_habit| user_habit.straight_days}
       { 
+        id: relationship.user_1.id,
         name: relationship.user_1.name,
         straight_days: max_value.straight_days
       } 
