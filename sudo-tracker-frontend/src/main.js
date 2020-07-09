@@ -20,8 +20,10 @@ const loginForm = document.querySelector(".login-form");
 ///// MISC /////
 let email_address = "";
 
-///////////////////MAIN///////////////////////
+///// ALERTS /////
+$(".alert").alert("close");
 
+///////////////////MAIN///////////////////////
 function main() {
   modalHandler();
 }
@@ -31,12 +33,6 @@ function modalHandler() {
     $("#loginModal").modal("show");
   } else {
     $("#loginModal").modal("hide");
-  }
-}
-function toggleLoginForm() {
-  login = false;
-  if (login === false) {
-    loginForm.style.display = "none";
   }
 }
 
@@ -55,7 +51,6 @@ function fetchUserData(email) {
   fetch("http://localhost:3000/users/login", configObj)
     .then((resp) => resp.json())
     .then((userData) => {
-      toggleLoginForm();
       renderUserData(userData);
     })
     .catch((err) => console.log(err));
@@ -80,11 +75,10 @@ function renderHabits(userData) {
   let index = 0;
   userData.user_habits.forEach((habit) => {
     habitsContainer.innerHTML += `
-        <tr><td id=${index} data-user-habit-id=${habit.user_habit_id}>${habit.name}</td> </tr>
+        <tr><td id=${index} data-user-habit-id=${habit.user_habit_id}>${habit.name}<button data-habit-id=${habit.habit_id} id='btn-delete' class="btn btn-danger btn-sm">x</button></td> </tr>
+        
     `;
 
-    // <button data-habit-id=${habit.habit_id} id='btn-delete' class="btn btn-danger">Delete</button>
-    debugger;
     daysStraightContainer.innerHTML += `
       <tr><td>${habit.straight_days}</td></tr>
     `;
@@ -93,7 +87,6 @@ function renderHabits(userData) {
 }
 
 ////// FORM HANDLERS /////
-
 function loginHandler() {
   event.preventDefault();
   const email = event.target["email"].value;
@@ -122,7 +115,6 @@ function toggleFriendHandler() {
 }
 
 ////// FROM SCRAPING FUNCTIONS /////
-
 function newHabitHandler() {
   event.preventDefault();
   const habitName = event.target["name"].value;
@@ -139,7 +131,6 @@ function newFriendHandler() {
 }
 
 ///// NEW/CREATE FUNCTIONS /////
-
 function submitNewFriend(email) {
   const userId = userNameContainer.children[0].dataset.userId;
 
@@ -182,19 +173,16 @@ function submitNewHabit(habitName, habitDescription) {
   fetch("http://localhost:3000/habits", configObj)
     .then((resp) => resp.json())
     .then((habit) => {
-      debugger;
       const index = habitsContainer.children.length;
 
       habitsContainer.innerHTML += `
-      <tr><td id=${index} data-user-habit-id=${habit.user_habit_id}>${habit.name}</td></tr>
+      <tr><td id=${index} data-user-habit-id=${habit.user_habit_id}>${habit.name}<button data-habit-id=${habit.habit_id} id='btn-delete' class="btn btn-danger btn-sm">x</button></td></tr>
+      
     `;
 
       daysStraightContainer.innerHTML += `
       <tr><td>${habit.straight_days}</td></tr>
     `;
-
-      // <button data-habit-id=${habit.id}  class="btn btn-danger" id='btn-delete'>Delete</button>
-      console.log(habit);
     })
     .catch((err) => console.log(err));
 }
@@ -205,10 +193,10 @@ function deleteHabit(event) {
   return fetch(`http://localhost:3000/habits/${habitId}`, { method: "DELETE" })
     .then((resp) => resp.json())
     .then((habit) => {
-      const index = parseInt(event.target.previousElementSibling.id);
+      const index = parseInt(event.target.parentElement.id);
       const liElement = daysStraightContainer.children[index];
       liElement.remove();
-      event.target.previousElementSibling.remove();
+      event.target.parentElement.remove();
       event.target.remove();
     })
     .catch((err) => console.log(err));

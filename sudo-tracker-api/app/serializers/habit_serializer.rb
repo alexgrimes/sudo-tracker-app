@@ -7,7 +7,7 @@ class HabitSerializer < ActiveModel::Serializer
   end
 
   def straight_days
-    user_habit = (habit_id: @object.id)
+    user_habit = UserHabit.find_by(habit_id: @object.id)
     user_habit.straight_days
   end
 end

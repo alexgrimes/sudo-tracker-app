@@ -18435,3 +18435,1723 @@ Processing by UsersController#login as */*
 Completed 200 OK in 13ms (Views: 10.5ms | ActiveRecord: 0.9ms | Allocations: 6222)
 
 
+Started POST "/users/login" for ::1 at 2020-07-08 20:38:22 -0500
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#login as */*
+  Parameters: {"email"=>"emilioquintana90@gmail.com", "do"=>"users#login", "user"=>{}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = ? LIMIT ?[0m  [["email_address", "emilioquintana90@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `login'
+[active_model_serializers]   [1m[36mUserHabit Load (0.2ms)[0m  [1m[34mSELECT "user_habits".* FROM "user_habits" WHERE "user_habits"."user_id" = ?[0m  [["user_id", "70"]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:15:in `map'
+[active_model_serializers]   [1m[36mHabit Load (0.6ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 185], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 186], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 189], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mFriendship Load (0.1ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships" WHERE "friendships"."user_2_id" = ?[0m  [["user_2_id", 70]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:5:in `map'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 71], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:6:in `block in accepted_relationships'
+[active_model_serializers]   [1m[36mUserHabit Load (0.1ms)[0m  [1m[34mSELECT "user_habits".* FROM "user_habits" WHERE "user_habits"."user_id" = ?[0m  [["user_id", "71"]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:6:in `max_by'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (41.31ms)
+Completed 200 OK in 60ms (Views: 48.5ms | ActiveRecord: 4.1ms | Allocations: 28792)
+
+
+Started POST "/users/login" for ::1 at 2020-07-08 20:39:26 -0500
+Processing by UsersController#login as */*
+  Parameters: {"email"=>"emilioquintana90@gmail.com", "do"=>"users#login", "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = ? LIMIT ?[0m  [["email_address", "emilioquintana90@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `login'
+[active_model_serializers]   [1m[36mUserHabit Load (0.2ms)[0m  [1m[34mSELECT "user_habits".* FROM "user_habits" WHERE "user_habits"."user_id" = ?[0m  [["user_id", "70"]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:15:in `map'
+[active_model_serializers]   [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 185], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 186], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 189], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mFriendship Load (0.1ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships" WHERE "friendships"."user_2_id" = ?[0m  [["user_2_id", 70]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:5:in `map'
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 71], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:6:in `block in accepted_relationships'
+[active_model_serializers]   [1m[36mUserHabit Load (0.1ms)[0m  [1m[34mSELECT "user_habits".* FROM "user_habits" WHERE "user_habits"."user_id" = ?[0m  [["user_id", "71"]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:6:in `max_by'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (9.32ms)
+Completed 200 OK in 13ms (Views: 9.5ms | ActiveRecord: 0.9ms | Allocations: 6239)
+
+
+Started POST "/users/login" for ::1 at 2020-07-08 20:45:17 -0500
+Processing by UsersController#login as */*
+  Parameters: {"email"=>"emilioquintana90@gmail.com", "do"=>"users#login", "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = ? LIMIT ?[0m  [["email_address", "emilioquintana90@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `login'
+[active_model_serializers]   [1m[36mUserHabit Load (0.2ms)[0m  [1m[34mSELECT "user_habits".* FROM "user_habits" WHERE "user_habits"."user_id" = ?[0m  [["user_id", "70"]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:15:in `map'
+[active_model_serializers]   [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 185], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 186], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 189], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mFriendship Load (0.1ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships" WHERE "friendships"."user_2_id" = ?[0m  [["user_2_id", 70]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:5:in `map'
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 71], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:6:in `block in accepted_relationships'
+[active_model_serializers]   [1m[36mUserHabit Load (0.1ms)[0m  [1m[34mSELECT "user_habits".* FROM "user_habits" WHERE "user_habits"."user_id" = ?[0m  [["user_id", "71"]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:6:in `max_by'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (38.55ms)
+Completed 200 OK in 41ms (Views: 38.4ms | ActiveRecord: 0.9ms | Allocations: 6242)
+
+
+Started POST "/users/login" for ::1 at 2020-07-08 20:45:47 -0500
+Processing by UsersController#login as */*
+  Parameters: {"email"=>"emilioquintana90@gmail.com", "do"=>"users#login", "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = ? LIMIT ?[0m  [["email_address", "emilioquintana90@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `login'
+[active_model_serializers]   [1m[36mUserHabit Load (0.2ms)[0m  [1m[34mSELECT "user_habits".* FROM "user_habits" WHERE "user_habits"."user_id" = ?[0m  [["user_id", "70"]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:15:in `map'
+[active_model_serializers]   [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 185], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 186], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mHabit Load (0.3ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 189], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mFriendship Load (0.1ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships" WHERE "friendships"."user_2_id" = ?[0m  [["user_2_id", 70]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:5:in `map'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 71], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:6:in `block in accepted_relationships'
+[active_model_serializers]   [1m[36mUserHabit Load (0.1ms)[0m  [1m[34mSELECT "user_habits".* FROM "user_habits" WHERE "user_habits"."user_id" = ?[0m  [["user_id", "71"]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:6:in `max_by'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (11.93ms)
+Completed 200 OK in 15ms (Views: 11.2ms | ActiveRecord: 1.4ms | Allocations: 6239)
+
+
+Started POST "/users/login" for ::1 at 2020-07-08 20:48:41 -0500
+Processing by UsersController#login as */*
+  Parameters: {"email"=>"emilioquintana90@gmail.com", "do"=>"users#login", "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = ? LIMIT ?[0m  [["email_address", "emilioquintana90@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `login'
+[active_model_serializers]   [1m[36mUserHabit Load (0.1ms)[0m  [1m[34mSELECT "user_habits".* FROM "user_habits" WHERE "user_habits"."user_id" = ?[0m  [["user_id", "70"]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:15:in `map'
+[active_model_serializers]   [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 185], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 186], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 189], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mFriendship Load (0.1ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships" WHERE "friendships"."user_2_id" = ?[0m  [["user_2_id", 70]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:5:in `map'
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 71], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:6:in `block in accepted_relationships'
+[active_model_serializers]   [1m[36mUserHabit Load (0.1ms)[0m  [1m[34mSELECT "user_habits".* FROM "user_habits" WHERE "user_habits"."user_id" = ?[0m  [["user_id", "71"]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:6:in `max_by'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (8.63ms)
+Completed 200 OK in 11ms (Views: 8.3ms | ActiveRecord: 1.0ms | Allocations: 6239)
+
+
+Started POST "/users/login" for ::1 at 2020-07-08 20:48:50 -0500
+Processing by UsersController#login as */*
+  Parameters: {"email"=>"emilioquintana90@gmail.com", "do"=>"users#login", "user"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = ? LIMIT ?[0m  [["email_address", "emilioquintana90@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `login'
+[active_model_serializers]   [1m[36mUserHabit Load (0.2ms)[0m  [1m[34mSELECT "user_habits".* FROM "user_habits" WHERE "user_habits"."user_id" = ?[0m  [["user_id", "70"]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:15:in `map'
+[active_model_serializers]   [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 185], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mHabit Load (0.2ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 186], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 189], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mFriendship Load (0.1ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships" WHERE "friendships"."user_2_id" = ?[0m  [["user_2_id", 70]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:5:in `map'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 71], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:6:in `block in accepted_relationships'
+[active_model_serializers]   [1m[36mUserHabit Load (0.1ms)[0m  [1m[34mSELECT "user_habits".* FROM "user_habits" WHERE "user_habits"."user_id" = ?[0m  [["user_id", "71"]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:6:in `max_by'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (10.05ms)
+Completed 200 OK in 12ms (Views: 9.5ms | ActiveRecord: 1.3ms | Allocations: 6221)
+
+
+Started POST "/users/login" for ::1 at 2020-07-08 20:49:32 -0500
+Processing by UsersController#login as */*
+  Parameters: {"email"=>"emilioquintana90@gmail.com", "do"=>"users#login", "user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = ? LIMIT ?[0m  [["email_address", "emilioquintana90@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `login'
+[active_model_serializers]   [1m[36mUserHabit Load (0.1ms)[0m  [1m[34mSELECT "user_habits".* FROM "user_habits" WHERE "user_habits"."user_id" = ?[0m  [["user_id", "70"]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:15:in `map'
+[active_model_serializers]   [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 185], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 186], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 189], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mFriendship Load (0.1ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships" WHERE "friendships"."user_2_id" = ?[0m  [["user_2_id", 70]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:5:in `map'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 71], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:6:in `block in accepted_relationships'
+[active_model_serializers]   [1m[36mUserHabit Load (0.4ms)[0m  [1m[34mSELECT "user_habits".* FROM "user_habits" WHERE "user_habits"."user_id" = ?[0m  [["user_id", "71"]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:6:in `max_by'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (9.07ms)
+Completed 200 OK in 11ms (Views: 8.4ms | ActiveRecord: 1.2ms | Allocations: 6221)
+
+
+Started POST "/users/login" for ::1 at 2020-07-08 20:50:20 -0500
+Processing by UsersController#login as */*
+  Parameters: {"email"=>"emilioquintana90@gmail.com", "do"=>"users#login", "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = ? LIMIT ?[0m  [["email_address", "emilioquintana90@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `login'
+[active_model_serializers]   [1m[36mUserHabit Load (0.1ms)[0m  [1m[34mSELECT "user_habits".* FROM "user_habits" WHERE "user_habits"."user_id" = ?[0m  [["user_id", "70"]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:15:in `map'
+[active_model_serializers]   [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 185], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 186], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mHabit Load (0.2ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 189], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mFriendship Load (0.1ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships" WHERE "friendships"."user_2_id" = ?[0m  [["user_2_id", 70]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:5:in `map'
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 71], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:6:in `block in accepted_relationships'
+[active_model_serializers]   [1m[36mUserHabit Load (0.1ms)[0m  [1m[34mSELECT "user_habits".* FROM "user_habits" WHERE "user_habits"."user_id" = ?[0m  [["user_id", "71"]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:6:in `max_by'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (7.72ms)
+Completed 200 OK in 9ms (Views: 7.3ms | ActiveRecord: 1.0ms | Allocations: 6221)
+
+
+Started POST "/users/login" for ::1 at 2020-07-08 20:51:11 -0500
+Processing by UsersController#login as */*
+  Parameters: {"email"=>"emilioquintana90@gmail.com", "do"=>"users#login", "user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = ? LIMIT ?[0m  [["email_address", "emilioquintana90@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `login'
+[active_model_serializers]   [1m[36mUserHabit Load (0.2ms)[0m  [1m[34mSELECT "user_habits".* FROM "user_habits" WHERE "user_habits"."user_id" = ?[0m  [["user_id", "70"]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:15:in `map'
+[active_model_serializers]   [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 185], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 186], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mHabit Load (0.2ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 189], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mFriendship Load (0.2ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships" WHERE "friendships"."user_2_id" = ?[0m  [["user_2_id", 70]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:5:in `map'
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 71], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:6:in `block in accepted_relationships'
+[active_model_serializers]   [1m[36mUserHabit Load (0.1ms)[0m  [1m[34mSELECT "user_habits".* FROM "user_habits" WHERE "user_habits"."user_id" = ?[0m  [["user_id", "71"]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:6:in `max_by'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (12.31ms)
+Completed 200 OK in 14ms (Views: 11.6ms | ActiveRecord: 1.3ms | Allocations: 6221)
+
+
+Started POST "/users/login" for ::1 at 2020-07-08 20:58:43 -0500
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#login as */*
+  Parameters: {"email"=>"emilioquintana90@gmail.com", "do"=>"users#login", "user"=>{}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = ? LIMIT ?[0m  [["email_address", "emilioquintana90@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `login'
+[active_model_serializers]   [1m[36mUserHabit Load (0.2ms)[0m  [1m[34mSELECT "user_habits".* FROM "user_habits" WHERE "user_habits"."user_id" = ?[0m  [["user_id", "70"]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:15:in `map'
+[active_model_serializers]   [1m[36mHabit Load (0.7ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 185], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 186], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 189], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mFriendship Load (0.1ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships" WHERE "friendships"."user_2_id" = ?[0m  [["user_2_id", 70]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:5:in `map'
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 71], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:6:in `block in accepted_relationships'
+[active_model_serializers]   [1m[36mUserHabit Load (0.2ms)[0m  [1m[34mSELECT "user_habits".* FROM "user_habits" WHERE "user_habits"."user_id" = ?[0m  [["user_id", "71"]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:6:in `max_by'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (13.41ms)
+Completed 200 OK in 22ms (Views: 14.1ms | ActiveRecord: 2.5ms | Allocations: 6307)
+
+
+Started POST "/users/login" for ::1 at 2020-07-08 20:59:18 -0500
+Processing by UsersController#login as */*
+  Parameters: {"email"=>"asdasdasd", "do"=>"users#login", "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = ? LIMIT ?[0m  [["email_address", "asdasdasd"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `login'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.17ms)
+Completed 200 OK in 24ms (Views: 22.2ms | ActiveRecord: 0.2ms | Allocations: 2509)
+
+
+Started POST "/users/login" for ::1 at 2020-07-08 20:59:46 -0500
+Processing by UsersController#login as */*
+  Parameters: {"email"=>"asdasdasd", "do"=>"users#login", "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = ? LIMIT ?[0m  [["email_address", "asdasdasd"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `login'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.08ms)
+Completed 200 OK in 5ms (Views: 0.8ms | ActiveRecord: 0.2ms | Allocations: 688)
+
+
+Started POST "/users/login" for ::1 at 2020-07-08 20:59:53 -0500
+Processing by UsersController#login as */*
+  Parameters: {"email"=>"asdasdasd", "do"=>"users#login", "user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = ? LIMIT ?[0m  [["email_address", "asdasdasd"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `login'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.05ms)
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 688)
+
+
+Started POST "/users/login" for ::1 at 2020-07-08 21:00:00 -0500
+Processing by UsersController#login as */*
+  Parameters: {"email"=>"asdasdasd", "do"=>"users#login", "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = ? LIMIT ?[0m  [["email_address", "asdasdasd"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `login'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.04ms)
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 688)
+
+
+Started POST "/users/login" for ::1 at 2020-07-08 21:01:15 -0500
+Processing by UsersController#login as */*
+  Parameters: {"email"=>"asdasdsd", "do"=>"users#login", "user"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = ? LIMIT ?[0m  [["email_address", "asdasdsd"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `login'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.07ms)
+Completed 200 OK in 4ms (Views: 0.9ms | ActiveRecord: 0.3ms | Allocations: 688)
+
+
+Started POST "/users/login" for ::1 at 2020-07-08 21:04:51 -0500
+Processing by UsersController#login as */*
+  Parameters: {"email"=>"emilioquintana90@gmail.com", "do"=>"users#login", "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = ? LIMIT ?[0m  [["email_address", "emilioquintana90@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `login'
+[active_model_serializers]   [1m[36mUserHabit Load (0.1ms)[0m  [1m[34mSELECT "user_habits".* FROM "user_habits" WHERE "user_habits"."user_id" = ?[0m  [["user_id", "70"]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:15:in `map'
+[active_model_serializers]   [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 185], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 186], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 189], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mFriendship Load (0.1ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships" WHERE "friendships"."user_2_id" = ?[0m  [["user_2_id", 70]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:5:in `map'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 71], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:6:in `block in accepted_relationships'
+[active_model_serializers]   [1m[36mUserHabit Load (0.6ms)[0m  [1m[34mSELECT "user_habits".* FROM "user_habits" WHERE "user_habits"."user_id" = ?[0m  [["user_id", "71"]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:6:in `max_by'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (10.33ms)
+Completed 200 OK in 12ms (Views: 9.6ms | ActiveRecord: 1.4ms | Allocations: 6221)
+
+
+Started POST "/users/login" for ::1 at 2020-07-08 21:05:05 -0500
+Processing by UsersController#login as */*
+  Parameters: {"email"=>"alex@gmail.com", "do"=>"users#login", "user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = ? LIMIT ?[0m  [["email_address", "alex@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `login'
+[active_model_serializers]   [1m[36mUserHabit Load (0.2ms)[0m  [1m[34mSELECT "user_habits".* FROM "user_habits" WHERE "user_habits"."user_id" = ?[0m  [["user_id", "71"]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:15:in `map'
+[active_model_serializers]   [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 187], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 188], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mFriendship Load (0.1ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships" WHERE "friendships"."user_2_id" = ?[0m  [["user_2_id", 71]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:5:in `map'
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 70], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:6:in `block in accepted_relationships'
+[active_model_serializers]   [1m[36mUserHabit Load (0.1ms)[0m  [1m[34mSELECT "user_habits".* FROM "user_habits" WHERE "user_habits"."user_id" = ?[0m  [["user_id", "70"]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:6:in `max_by'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (51.81ms)
+Completed 200 OK in 53ms (Views: 51.4ms | ActiveRecord: 0.9ms | Allocations: 5443)
+
+
+Started PATCH "/user_habits//187" for ::1 at 2020-07-08 21:05:12 -0500
+Processing by UserHabitsController#update as */*
+  Parameters: {"straight_days"=>1, "id"=>"187", "user_habit"=>{"straight_days"=>1}}
+  [1m[36mUserHabit Load (0.2ms)[0m  [1m[34mSELECT "user_habits".* FROM "user_habits" WHERE "user_habits"."id" = ? LIMIT ?[0m  [["id", 187], ["LIMIT", 1]]
+  ↳ app/controllers/user_habits_controller.rb:3:in `update'
+  [1m[35m (0.6ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/user_habits_controller.rb:4:in `update'
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 71], ["LIMIT", 1]]
+  ↳ app/controllers/user_habits_controller.rb:4:in `update'
+  [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 187], ["LIMIT", 1]]
+  ↳ app/controllers/user_habits_controller.rb:4:in `update'
+  [1m[36mUserHabit Update (0.4ms)[0m  [1m[33mUPDATE "user_habits" SET "straight_days" = ?, "updated_at" = ? WHERE "user_habits"."id" = ?[0m  [["straight_days", "1"], ["updated_at", "2020-07-09 02:05:12.518410"], ["id", 187]]
+  ↳ app/controllers/user_habits_controller.rb:4:in `update'
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/user_habits_controller.rb:4:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with UserHabit (0.23ms)
+Completed 200 OK in 18ms (Views: 0.9ms | ActiveRecord: 3.8ms | Allocations: 6336)
+
+
+Started PATCH "/user_habits//188" for ::1 at 2020-07-08 21:05:13 -0500
+Processing by UserHabitsController#update as */*
+  Parameters: {"straight_days"=>1, "id"=>"188", "user_habit"=>{"straight_days"=>1}}
+  [1m[36mUserHabit Load (0.1ms)[0m  [1m[34mSELECT "user_habits".* FROM "user_habits" WHERE "user_habits"."id" = ? LIMIT ?[0m  [["id", 188], ["LIMIT", 1]]
+  ↳ app/controllers/user_habits_controller.rb:3:in `update'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/user_habits_controller.rb:4:in `update'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 71], ["LIMIT", 1]]
+  ↳ app/controllers/user_habits_controller.rb:4:in `update'
+  [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 188], ["LIMIT", 1]]
+  ↳ app/controllers/user_habits_controller.rb:4:in `update'
+  [1m[36mUserHabit Update (0.4ms)[0m  [1m[33mUPDATE "user_habits" SET "straight_days" = ?, "updated_at" = ? WHERE "user_habits"."id" = ?[0m  [["straight_days", "1"], ["updated_at", "2020-07-09 02:05:13.674965"], ["id", 188]]
+  ↳ app/controllers/user_habits_controller.rb:4:in `update'
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/user_habits_controller.rb:4:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with UserHabit (0.16ms)
+Completed 200 OK in 11ms (Views: 0.5ms | ActiveRecord: 3.1ms | Allocations: 5591)
+
+
+Started PATCH "/user_habits//188" for ::1 at 2020-07-08 21:05:14 -0500
+Processing by UserHabitsController#update as */*
+  Parameters: {"straight_days"=>2, "id"=>"188", "user_habit"=>{"straight_days"=>2}}
+  [1m[36mUserHabit Load (0.3ms)[0m  [1m[34mSELECT "user_habits".* FROM "user_habits" WHERE "user_habits"."id" = ? LIMIT ?[0m  [["id", 188], ["LIMIT", 1]]
+  ↳ app/controllers/user_habits_controller.rb:3:in `update'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/user_habits_controller.rb:4:in `update'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 71], ["LIMIT", 1]]
+  ↳ app/controllers/user_habits_controller.rb:4:in `update'
+  [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 188], ["LIMIT", 1]]
+  ↳ app/controllers/user_habits_controller.rb:4:in `update'
+  [1m[36mUserHabit Update (0.3ms)[0m  [1m[33mUPDATE "user_habits" SET "straight_days" = ?, "updated_at" = ? WHERE "user_habits"."id" = ?[0m  [["straight_days", "2"], ["updated_at", "2020-07-09 02:05:14.249331"], ["id", 188]]
+  ↳ app/controllers/user_habits_controller.rb:4:in `update'
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/user_habits_controller.rb:4:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with UserHabit (0.19ms)
+Completed 200 OK in 11ms (Views: 0.6ms | ActiveRecord: 3.4ms | Allocations: 5591)
+
+
+Started PATCH "/user_habits//187" for ::1 at 2020-07-08 21:05:15 -0500
+Processing by UserHabitsController#update as */*
+  Parameters: {"straight_days"=>2, "id"=>"187", "user_habit"=>{"straight_days"=>2}}
+  [1m[36mUserHabit Load (0.2ms)[0m  [1m[34mSELECT "user_habits".* FROM "user_habits" WHERE "user_habits"."id" = ? LIMIT ?[0m  [["id", 187], ["LIMIT", 1]]
+  ↳ app/controllers/user_habits_controller.rb:3:in `update'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/user_habits_controller.rb:4:in `update'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 71], ["LIMIT", 1]]
+  ↳ app/controllers/user_habits_controller.rb:4:in `update'
+  [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 187], ["LIMIT", 1]]
+  ↳ app/controllers/user_habits_controller.rb:4:in `update'
+  [1m[36mUserHabit Update (0.3ms)[0m  [1m[33mUPDATE "user_habits" SET "straight_days" = ?, "updated_at" = ? WHERE "user_habits"."id" = ?[0m  [["straight_days", "2"], ["updated_at", "2020-07-09 02:05:15.114052"], ["id", 187]]
+  ↳ app/controllers/user_habits_controller.rb:4:in `update'
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/user_habits_controller.rb:4:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with UserHabit (0.17ms)
+Completed 200 OK in 12ms (Views: 0.5ms | ActiveRecord: 2.9ms | Allocations: 5590)
+
+
+Started POST "/users/login" for ::1 at 2020-07-08 21:07:41 -0500
+Processing by UsersController#login as */*
+  Parameters: {"email"=>"emilioquintana90@gmail.com", "do"=>"users#login", "user"=>{}}
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = ? LIMIT ?[0m  [["email_address", "emilioquintana90@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `login'
+[active_model_serializers]   [1m[36mUserHabit Load (0.3ms)[0m  [1m[34mSELECT "user_habits".* FROM "user_habits" WHERE "user_habits"."user_id" = ?[0m  [["user_id", "70"]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:15:in `map'
+[active_model_serializers]   [1m[36mHabit Load (0.4ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 185], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 186], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 189], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mFriendship Load (1.5ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships" WHERE "friendships"."user_2_id" = ?[0m  [["user_2_id", 70]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:5:in `map'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 71], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:6:in `block in accepted_relationships'
+[active_model_serializers]   [1m[36mUserHabit Load (0.3ms)[0m  [1m[34mSELECT "user_habits".* FROM "user_habits" WHERE "user_habits"."user_id" = ?[0m  [["user_id", "71"]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:6:in `max_by'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (17.53ms)
+Completed 200 OK in 22ms (Views: 15.1ms | ActiveRecord: 5.1ms | Allocations: 6223)
+
+
+Started POST "/users/login" for ::1 at 2020-07-09 08:58:04 -0500
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#login as */*
+  Parameters: {"email"=>"emilioquintana90@gmail.com", "do"=>"users#login", "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = ? LIMIT ?[0m  [["email_address", "emilioquintana90@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `login'
+[active_model_serializers]   [1m[36mUserHabit Load (0.3ms)[0m  [1m[34mSELECT "user_habits".* FROM "user_habits" WHERE "user_habits"."user_id" = ?[0m  [["user_id", "70"]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:15:in `map'
+[active_model_serializers]   [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 185], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 186], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 189], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mFriendship Load (0.1ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships" WHERE "friendships"."user_2_id" = ?[0m  [["user_2_id", 70]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:5:in `map'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 71], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:6:in `block in accepted_relationships'
+[active_model_serializers]   [1m[36mUserHabit Load (0.1ms)[0m  [1m[34mSELECT "user_habits".* FROM "user_habits" WHERE "user_habits"."user_id" = ?[0m  [["user_id", "71"]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:6:in `max_by'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (41.97ms)
+Completed 200 OK in 63ms (Views: 51.0ms | ActiveRecord: 3.4ms | Allocations: 28790)
+
+
+Started POST "/habits" for ::1 at 2020-07-09 08:58:26 -0500
+Processing by HabitsController#create as */*
+  Parameters: {"name"=>"Workout", "description"=>"", "id"=>"70", "habit"=>{"id"=>"70", "name"=>"Workout", "description"=>""}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/habits_controller.rb:3:in `create'
+  [1m[36mHabit Create (2.5ms)[0m  [1m[32mINSERT INTO "habits" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Workout"], ["description", ""], ["created_at", "2020-07-09 13:58:26.429907"], ["updated_at", "2020-07-09 13:58:26.429907"]]
+  ↳ app/controllers/habits_controller.rb:3:in `create'
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/habits_controller.rb:3:in `create'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/habits_controller.rb:4:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 70], ["LIMIT", 1]]
+  ↳ app/controllers/habits_controller.rb:4:in `create'
+  [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 190], ["LIMIT", 1]]
+  ↳ app/controllers/habits_controller.rb:4:in `create'
+  [1m[36mUserHabit Create (0.3ms)[0m  [1m[32mINSERT INTO "user_habits" ("user_id", "habit_id", "straight_days", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", "70"], ["habit_id", "190"], ["straight_days", "0"], ["created_at", "2020-07-09 13:58:26.442197"], ["updated_at", "2020-07-09 13:58:26.442197"]]
+  ↳ app/controllers/habits_controller.rb:4:in `create'
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/habits_controller.rb:4:in `create'
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 5.9ms | Allocations: 7634)
+
+
+  
+SyntaxError (/Users/emilioquintana/Development/code/Mod3/sudo-tracker/sudo-tracker-api/app/serializers/habit_serializer.rb:10: syntax error, unexpected tLABEL
+    user_habit = (habit_id: @object.id)
+                  ^~~~~~~~~):
+  
+app/serializers/habit_serializer.rb:10: syntax error, unexpected tLABEL
+app/serializers/habit_serializer.rb:10: syntax error, unexpected tLABEL
+app/controllers/habits_controller.rb:5:in `create'
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 70]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 71]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mHabit Load (0.2ms)[0m  [1m[34mSELECT "habits".* FROM "habits"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHabit Destroy (0.4ms)[0m  [1m[31mDELETE FROM "habits" WHERE "habits"."id" = ?[0m  [["id", 185]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHabit Destroy (0.2ms)[0m  [1m[31mDELETE FROM "habits" WHERE "habits"."id" = ?[0m  [["id", 186]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHabit Destroy (0.2ms)[0m  [1m[31mDELETE FROM "habits" WHERE "habits"."id" = ?[0m  [["id", 187]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHabit Destroy (0.2ms)[0m  [1m[31mDELETE FROM "habits" WHERE "habits"."id" = ?[0m  [["id", 188]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHabit Destroy (0.2ms)[0m  [1m[31mDELETE FROM "habits" WHERE "habits"."id" = ?[0m  [["id", 189]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHabit Destroy (0.2ms)[0m  [1m[31mDELETE FROM "habits" WHERE "habits"."id" = ?[0m  [["id", 190]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUserHabit Load (0.1ms)[0m  [1m[34mSELECT "user_habits".* FROM "user_habits"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserHabit Destroy (0.3ms)[0m  [1m[31mDELETE FROM "user_habits" WHERE "user_habits"."id" = ?[0m  [["id", 185]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserHabit Destroy (0.3ms)[0m  [1m[31mDELETE FROM "user_habits" WHERE "user_habits"."id" = ?[0m  [["id", 186]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserHabit Destroy (0.2ms)[0m  [1m[31mDELETE FROM "user_habits" WHERE "user_habits"."id" = ?[0m  [["id", 187]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserHabit Destroy (0.2ms)[0m  [1m[31mDELETE FROM "user_habits" WHERE "user_habits"."id" = ?[0m  [["id", 188]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserHabit Destroy (0.3ms)[0m  [1m[31mDELETE FROM "user_habits" WHERE "user_habits"."id" = ?[0m  [["id", 189]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserHabit Destroy (0.5ms)[0m  [1m[31mDELETE FROM "user_habits" WHERE "user_habits"."id" = ?[0m  [["id", 190]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mFriendship Load (0.2ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFriendship Destroy (0.3ms)[0m  [1m[31mDELETE FROM "friendships" WHERE "friendships"."id" = ?[0m  [["id", 34]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFriendship Destroy (0.2ms)[0m  [1m[31mDELETE FROM "friendships" WHERE "friendships"."id" = ?[0m  [["id", 35]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "age", "img_url", "email_address", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Emilio"], ["age", 22], ["img_url", "www.nicepicture.com/1"], ["email_address", "emilioquintana90@gmail.com"], ["created_at", "2020-07-09 13:59:41.378837"], ["updated_at", "2020-07-09 13:59:41.378837"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "age", "img_url", "email_address", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Alex"], ["age", 34], ["img_url", "www.nicepicture.com/1"], ["email_address", "alex@gmail.com"], ["created_at", "2020-07-09 13:59:41.382700"], ["updated_at", "2020-07-09 13:59:41.382700"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHabit Create (0.2ms)[0m  [1m[32mINSERT INTO "habits" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Meditation"], ["description", "A nice habit!"], ["created_at", "2020-07-09 13:59:41.386519"], ["updated_at", "2020-07-09 13:59:41.386519"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" ORDER BY "habits"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 72], ["LIMIT", 1]]
+  [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 191], ["LIMIT", 1]]
+  [1m[36mUserHabit Create (0.3ms)[0m  [1m[32mINSERT INTO "user_habits" ("user_id", "habit_id", "straight_days", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", "72"], ["habit_id", "191"], ["straight_days", "0"], ["created_at", "2020-07-09 13:59:41.400596"], ["updated_at", "2020-07-09 13:59:41.400596"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHabit Create (0.4ms)[0m  [1m[32mINSERT INTO "habits" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Fasting"], ["description", "A nice habit!"], ["created_at", "2020-07-09 13:59:41.403018"], ["updated_at", "2020-07-09 13:59:41.403018"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" ORDER BY "habits"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 72], ["LIMIT", 1]]
+  [1m[36mHabit Load (0.0ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 192], ["LIMIT", 1]]
+  [1m[36mUserHabit Create (0.3ms)[0m  [1m[32mINSERT INTO "user_habits" ("user_id", "habit_id", "straight_days", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", "72"], ["habit_id", "192"], ["straight_days", "0"], ["created_at", "2020-07-09 13:59:41.410926"], ["updated_at", "2020-07-09 13:59:41.410926"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHabit Create (0.3ms)[0m  [1m[32mINSERT INTO "habits" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Workout"], ["description", "A nice habit!"], ["created_at", "2020-07-09 13:59:41.413459"], ["updated_at", "2020-07-09 13:59:41.413459"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" ORDER BY "habits"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 73], ["LIMIT", 1]]
+  [1m[36mHabit Load (0.0ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 193], ["LIMIT", 1]]
+  [1m[36mUserHabit Create (0.4ms)[0m  [1m[32mINSERT INTO "user_habits" ("user_id", "habit_id", "straight_days", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", "73"], ["habit_id", "193"], ["straight_days", "0"], ["created_at", "2020-07-09 13:59:41.434446"], ["updated_at", "2020-07-09 13:59:41.434446"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHabit Create (0.3ms)[0m  [1m[32mINSERT INTO "habits" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Mandarin"], ["description", "A nice habit!"], ["created_at", "2020-07-09 13:59:41.437528"], ["updated_at", "2020-07-09 13:59:41.437528"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" ORDER BY "habits"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 73], ["LIMIT", 1]]
+  [1m[36mHabit Load (0.0ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 194], ["LIMIT", 1]]
+  [1m[36mUserHabit Create (0.3ms)[0m  [1m[32mINSERT INTO "user_habits" ("user_id", "habit_id", "straight_days", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", "73"], ["habit_id", "194"], ["straight_days", "0"], ["created_at", "2020-07-09 13:59:41.444939"], ["updated_at", "2020-07-09 13:59:41.444939"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHabit Create (0.3ms)[0m  [1m[32mINSERT INTO "habits" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Cooking"], ["description", "A nice habit!"], ["created_at", "2020-07-09 13:59:41.447447"], ["updated_at", "2020-07-09 13:59:41.447447"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" ORDER BY "habits"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 72], ["LIMIT", 1]]
+  [1m[36mHabit Load (0.0ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 195], ["LIMIT", 1]]
+  [1m[36mUserHabit Create (0.3ms)[0m  [1m[32mINSERT INTO "user_habits" ("user_id", "habit_id", "straight_days", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", "72"], ["habit_id", "195"], ["straight_days", "0"], ["created_at", "2020-07-09 13:59:41.454578"], ["updated_at", "2020-07-09 13:59:41.454578"]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+Started POST "/users/login" for ::1 at 2020-07-09 08:59:51 -0500
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#login as */*
+  Parameters: {"email"=>"emilioquintana90@gmail.com", "do"=>"users#login", "user"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = ? LIMIT ?[0m  [["email_address", "emilioquintana90@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `login'
+[active_model_serializers]   [1m[36mUserHabit Load (0.1ms)[0m  [1m[34mSELECT "user_habits".* FROM "user_habits" WHERE "user_habits"."user_id" = ?[0m  [["user_id", "72"]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:15:in `map'
+[active_model_serializers]   [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 191], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 192], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 195], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mFriendship Load (0.1ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships" WHERE "friendships"."user_2_id" = ?[0m  [["user_2_id", 72]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:5:in `map'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (26.83ms)
+Completed 200 OK in 45ms (Views: 33.4ms | ActiveRecord: 2.5ms | Allocations: 23955)
+
+
+Started POST "/habits" for ::1 at 2020-07-09 09:00:01 -0500
+Processing by HabitsController#create as */*
+  Parameters: {"name"=>"Workout", "description"=>"asdasd", "id"=>"72", "habit"=>{"id"=>"72", "name"=>"Workout", "description"=>"asdasd"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/habits_controller.rb:3:in `create'
+  [1m[36mHabit Create (0.5ms)[0m  [1m[32mINSERT INTO "habits" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Workout"], ["description", "asdasd"], ["created_at", "2020-07-09 14:00:01.890787"], ["updated_at", "2020-07-09 14:00:01.890787"]]
+  ↳ app/controllers/habits_controller.rb:3:in `create'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/habits_controller.rb:3:in `create'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/habits_controller.rb:4:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 72], ["LIMIT", 1]]
+  ↳ app/controllers/habits_controller.rb:4:in `create'
+  [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 196], ["LIMIT", 1]]
+  ↳ app/controllers/habits_controller.rb:4:in `create'
+  [1m[36mUserHabit Create (0.3ms)[0m  [1m[32mINSERT INTO "user_habits" ("user_id", "habit_id", "straight_days", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", "72"], ["habit_id", "196"], ["straight_days", "0"], ["created_at", "2020-07-09 14:00:01.899976"], ["updated_at", "2020-07-09 14:00:01.899976"]]
+  ↳ app/controllers/habits_controller.rb:4:in `create'
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/habits_controller.rb:4:in `create'
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 2.6ms | Allocations: 7651)
+
+
+  
+SyntaxError (/Users/emilioquintana/Development/code/Mod3/sudo-tracker/sudo-tracker-api/app/serializers/habit_serializer.rb:10: syntax error, unexpected tLABEL
+    user_habit = (habit_id: @object.id)
+                  ^~~~~~~~~):
+  
+app/serializers/habit_serializer.rb:10: syntax error, unexpected tLABEL
+app/serializers/habit_serializer.rb:10: syntax error, unexpected tLABEL
+app/controllers/habits_controller.rb:5:in `create'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 72]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 73]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits"[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHabit Destroy (0.2ms)[0m  [1m[31mDELETE FROM "habits" WHERE "habits"."id" = ?[0m  [["id", 191]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHabit Destroy (0.3ms)[0m  [1m[31mDELETE FROM "habits" WHERE "habits"."id" = ?[0m  [["id", 192]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHabit Destroy (0.2ms)[0m  [1m[31mDELETE FROM "habits" WHERE "habits"."id" = ?[0m  [["id", 193]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHabit Destroy (0.3ms)[0m  [1m[31mDELETE FROM "habits" WHERE "habits"."id" = ?[0m  [["id", 194]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHabit Destroy (0.3ms)[0m  [1m[31mDELETE FROM "habits" WHERE "habits"."id" = ?[0m  [["id", 195]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHabit Destroy (0.2ms)[0m  [1m[31mDELETE FROM "habits" WHERE "habits"."id" = ?[0m  [["id", 196]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUserHabit Load (0.2ms)[0m  [1m[34mSELECT "user_habits".* FROM "user_habits"[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserHabit Destroy (0.2ms)[0m  [1m[31mDELETE FROM "user_habits" WHERE "user_habits"."id" = ?[0m  [["id", 191]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserHabit Destroy (0.3ms)[0m  [1m[31mDELETE FROM "user_habits" WHERE "user_habits"."id" = ?[0m  [["id", 192]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserHabit Destroy (0.3ms)[0m  [1m[31mDELETE FROM "user_habits" WHERE "user_habits"."id" = ?[0m  [["id", 193]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserHabit Destroy (0.3ms)[0m  [1m[31mDELETE FROM "user_habits" WHERE "user_habits"."id" = ?[0m  [["id", 194]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserHabit Destroy (0.3ms)[0m  [1m[31mDELETE FROM "user_habits" WHERE "user_habits"."id" = ?[0m  [["id", 195]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserHabit Destroy (0.3ms)[0m  [1m[31mDELETE FROM "user_habits" WHERE "user_habits"."id" = ?[0m  [["id", 196]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mFriendship Load (0.2ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships"[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "age", "img_url", "email_address", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Emilio"], ["age", 22], ["img_url", "www.nicepicture.com/1"], ["email_address", "emilioquintana90@gmail.com"], ["created_at", "2020-07-09 14:02:13.617327"], ["updated_at", "2020-07-09 14:02:13.617327"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "age", "img_url", "email_address", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Alex"], ["age", 34], ["img_url", "www.nicepicture.com/1"], ["email_address", "alex@gmail.com"], ["created_at", "2020-07-09 14:02:13.621208"], ["updated_at", "2020-07-09 14:02:13.621208"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHabit Create (0.3ms)[0m  [1m[32mINSERT INTO "habits" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Meditation"], ["description", "A nice habit!"], ["created_at", "2020-07-09 14:02:13.625051"], ["updated_at", "2020-07-09 14:02:13.625051"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" ORDER BY "habits"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 74], ["LIMIT", 1]]
+  [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 197], ["LIMIT", 1]]
+  [1m[36mUserHabit Create (0.2ms)[0m  [1m[32mINSERT INTO "user_habits" ("user_id", "habit_id", "straight_days", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", "74"], ["habit_id", "197"], ["straight_days", "0"], ["created_at", "2020-07-09 14:02:13.636555"], ["updated_at", "2020-07-09 14:02:13.636555"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHabit Create (0.3ms)[0m  [1m[32mINSERT INTO "habits" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Fasting"], ["description", "A nice habit!"], ["created_at", "2020-07-09 14:02:13.639583"], ["updated_at", "2020-07-09 14:02:13.639583"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" ORDER BY "habits"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 74], ["LIMIT", 1]]
+  [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 198], ["LIMIT", 1]]
+  [1m[36mUserHabit Create (0.3ms)[0m  [1m[32mINSERT INTO "user_habits" ("user_id", "habit_id", "straight_days", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", "74"], ["habit_id", "198"], ["straight_days", "0"], ["created_at", "2020-07-09 14:02:13.656256"], ["updated_at", "2020-07-09 14:02:13.656256"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHabit Create (0.3ms)[0m  [1m[32mINSERT INTO "habits" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Workout"], ["description", "A nice habit!"], ["created_at", "2020-07-09 14:02:13.659404"], ["updated_at", "2020-07-09 14:02:13.659404"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mHabit Load (0.2ms)[0m  [1m[34mSELECT "habits".* FROM "habits" ORDER BY "habits"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 75], ["LIMIT", 1]]
+  [1m[36mHabit Load (0.0ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 199], ["LIMIT", 1]]
+  [1m[36mUserHabit Create (0.4ms)[0m  [1m[32mINSERT INTO "user_habits" ("user_id", "habit_id", "straight_days", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", "75"], ["habit_id", "199"], ["straight_days", "0"], ["created_at", "2020-07-09 14:02:13.671485"], ["updated_at", "2020-07-09 14:02:13.671485"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHabit Create (0.3ms)[0m  [1m[32mINSERT INTO "habits" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Mandarin"], ["description", "A nice habit!"], ["created_at", "2020-07-09 14:02:13.674860"], ["updated_at", "2020-07-09 14:02:13.674860"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" ORDER BY "habits"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 75], ["LIMIT", 1]]
+  [1m[36mHabit Load (0.0ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 200], ["LIMIT", 1]]
+  [1m[36mUserHabit Create (0.3ms)[0m  [1m[32mINSERT INTO "user_habits" ("user_id", "habit_id", "straight_days", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", "75"], ["habit_id", "200"], ["straight_days", "0"], ["created_at", "2020-07-09 14:02:13.682191"], ["updated_at", "2020-07-09 14:02:13.682191"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHabit Create (0.3ms)[0m  [1m[32mINSERT INTO "habits" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Cooking"], ["description", "A nice habit!"], ["created_at", "2020-07-09 14:02:13.684783"], ["updated_at", "2020-07-09 14:02:13.684783"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" ORDER BY "habits"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 74], ["LIMIT", 1]]
+  [1m[36mHabit Load (0.0ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 201], ["LIMIT", 1]]
+  [1m[36mUserHabit Create (0.3ms)[0m  [1m[32mINSERT INTO "user_habits" ("user_id", "habit_id", "straight_days", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", "74"], ["habit_id", "201"], ["straight_days", "0"], ["created_at", "2020-07-09 14:02:13.692052"], ["updated_at", "2020-07-09 14:02:13.692052"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+Started POST "/users/login" for ::1 at 2020-07-09 09:02:26 -0500
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#login as */*
+  Parameters: {"email"=>"emilioquintana90@gmail.com", "do"=>"users#login", "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = ? LIMIT ?[0m  [["email_address", "emilioquintana90@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `login'
+[active_model_serializers]   [1m[36mUserHabit Load (0.1ms)[0m  [1m[34mSELECT "user_habits".* FROM "user_habits" WHERE "user_habits"."user_id" = ?[0m  [["user_id", "74"]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:15:in `map'
+[active_model_serializers]   [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 197], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mHabit Load (0.2ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 198], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mHabit Load (0.2ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 201], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mFriendship Load (0.1ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships" WHERE "friendships"."user_2_id" = ?[0m  [["user_2_id", 74]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:5:in `map'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (31.05ms)
+Completed 200 OK in 49ms (Views: 36.7ms | ActiveRecord: 3.2ms | Allocations: 23954)
+
+
+Started POST "/habits" for ::1 at 2020-07-09 09:02:34 -0500
+Processing by HabitsController#create as */*
+  Parameters: {"name"=>"Workout", "description"=>"asdasd", "id"=>"74", "habit"=>{"id"=>"74", "name"=>"Workout", "description"=>"asdasd"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/habits_controller.rb:3:in `create'
+  [1m[36mHabit Create (0.5ms)[0m  [1m[32mINSERT INTO "habits" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Workout"], ["description", "asdasd"], ["created_at", "2020-07-09 14:02:34.994385"], ["updated_at", "2020-07-09 14:02:34.994385"]]
+  ↳ app/controllers/habits_controller.rb:3:in `create'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/habits_controller.rb:3:in `create'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/habits_controller.rb:4:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 74], ["LIMIT", 1]]
+  ↳ app/controllers/habits_controller.rb:4:in `create'
+  [1m[36mHabit Load (0.0ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 202], ["LIMIT", 1]]
+  ↳ app/controllers/habits_controller.rb:4:in `create'
+  [1m[36mUserHabit Create (0.3ms)[0m  [1m[32mINSERT INTO "user_habits" ("user_id", "habit_id", "straight_days", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", "74"], ["habit_id", "202"], ["straight_days", "0"], ["created_at", "2020-07-09 14:02:35.003249"], ["updated_at", "2020-07-09 14:02:35.003249"]]
+  ↳ app/controllers/habits_controller.rb:4:in `create'
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/habits_controller.rb:4:in `create'
+[active_model_serializers]   [1m[36mUserHabit Load (0.3ms)[0m  [1m[34mSELECT "user_habits".* FROM "user_habits" WHERE "user_habits"."habit_id" = ? LIMIT ?[0m  [["habit_id", "202"], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/habit_serializer.rb:5:in `user_habit_id'
+[active_model_serializers] Rendered HabitSerializer with ActiveModelSerializers::Adapter::Attributes (4.26ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 2.8ms | Allocations: 9509)
+
+
+  
+NoMethodError (undefined method `find_by' for #<HabitSerializer:0x00007fd9b9c7d310>):
+  
+app/serializers/habit_serializer.rb:10:in `straight_days'
+app/controllers/habits_controller.rb:5:in `create'
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 74]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 75]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHabit Destroy (0.2ms)[0m  [1m[31mDELETE FROM "habits" WHERE "habits"."id" = ?[0m  [["id", 197]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHabit Destroy (0.4ms)[0m  [1m[31mDELETE FROM "habits" WHERE "habits"."id" = ?[0m  [["id", 198]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHabit Destroy (0.4ms)[0m  [1m[31mDELETE FROM "habits" WHERE "habits"."id" = ?[0m  [["id", 199]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHabit Destroy (0.2ms)[0m  [1m[31mDELETE FROM "habits" WHERE "habits"."id" = ?[0m  [["id", 200]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHabit Destroy (0.2ms)[0m  [1m[31mDELETE FROM "habits" WHERE "habits"."id" = ?[0m  [["id", 201]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHabit Destroy (0.2ms)[0m  [1m[31mDELETE FROM "habits" WHERE "habits"."id" = ?[0m  [["id", 202]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUserHabit Load (0.2ms)[0m  [1m[34mSELECT "user_habits".* FROM "user_habits"[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserHabit Destroy (0.2ms)[0m  [1m[31mDELETE FROM "user_habits" WHERE "user_habits"."id" = ?[0m  [["id", 197]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserHabit Destroy (0.3ms)[0m  [1m[31mDELETE FROM "user_habits" WHERE "user_habits"."id" = ?[0m  [["id", 198]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserHabit Destroy (0.2ms)[0m  [1m[31mDELETE FROM "user_habits" WHERE "user_habits"."id" = ?[0m  [["id", 199]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserHabit Destroy (0.2ms)[0m  [1m[31mDELETE FROM "user_habits" WHERE "user_habits"."id" = ?[0m  [["id", 200]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserHabit Destroy (0.3ms)[0m  [1m[31mDELETE FROM "user_habits" WHERE "user_habits"."id" = ?[0m  [["id", 201]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserHabit Destroy (0.2ms)[0m  [1m[31mDELETE FROM "user_habits" WHERE "user_habits"."id" = ?[0m  [["id", 202]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mFriendship Load (0.2ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships"[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "age", "img_url", "email_address", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Emilio"], ["age", 22], ["img_url", "www.nicepicture.com/1"], ["email_address", "emilioquintana90@gmail.com"], ["created_at", "2020-07-09 14:02:54.713960"], ["updated_at", "2020-07-09 14:02:54.713960"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "age", "img_url", "email_address", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Alex"], ["age", 34], ["img_url", "www.nicepicture.com/1"], ["email_address", "alex@gmail.com"], ["created_at", "2020-07-09 14:02:54.717697"], ["updated_at", "2020-07-09 14:02:54.717697"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHabit Create (0.3ms)[0m  [1m[32mINSERT INTO "habits" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Meditation"], ["description", "A nice habit!"], ["created_at", "2020-07-09 14:02:54.721184"], ["updated_at", "2020-07-09 14:02:54.721184"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" ORDER BY "habits"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 76], ["LIMIT", 1]]
+  [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 203], ["LIMIT", 1]]
+  [1m[36mUserHabit Create (0.3ms)[0m  [1m[32mINSERT INTO "user_habits" ("user_id", "habit_id", "straight_days", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", "76"], ["habit_id", "203"], ["straight_days", "0"], ["created_at", "2020-07-09 14:02:54.734286"], ["updated_at", "2020-07-09 14:02:54.734286"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHabit Create (0.3ms)[0m  [1m[32mINSERT INTO "habits" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Fasting"], ["description", "A nice habit!"], ["created_at", "2020-07-09 14:02:54.737212"], ["updated_at", "2020-07-09 14:02:54.737212"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" ORDER BY "habits"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 76], ["LIMIT", 1]]
+  [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 204], ["LIMIT", 1]]
+  [1m[36mUserHabit Create (0.3ms)[0m  [1m[32mINSERT INTO "user_habits" ("user_id", "habit_id", "straight_days", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", "76"], ["habit_id", "204"], ["straight_days", "0"], ["created_at", "2020-07-09 14:02:54.757042"], ["updated_at", "2020-07-09 14:02:54.757042"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHabit Create (0.3ms)[0m  [1m[32mINSERT INTO "habits" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Workout"], ["description", "A nice habit!"], ["created_at", "2020-07-09 14:02:54.760831"], ["updated_at", "2020-07-09 14:02:54.760831"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" ORDER BY "habits"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 77], ["LIMIT", 1]]
+  [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 205], ["LIMIT", 1]]
+  [1m[36mUserHabit Create (0.3ms)[0m  [1m[32mINSERT INTO "user_habits" ("user_id", "habit_id", "straight_days", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", "77"], ["habit_id", "205"], ["straight_days", "0"], ["created_at", "2020-07-09 14:02:54.770326"], ["updated_at", "2020-07-09 14:02:54.770326"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHabit Create (0.5ms)[0m  [1m[32mINSERT INTO "habits" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Mandarin"], ["description", "A nice habit!"], ["created_at", "2020-07-09 14:02:54.774146"], ["updated_at", "2020-07-09 14:02:54.774146"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" ORDER BY "habits"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 77], ["LIMIT", 1]]
+  [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 206], ["LIMIT", 1]]
+  [1m[36mUserHabit Create (0.3ms)[0m  [1m[32mINSERT INTO "user_habits" ("user_id", "habit_id", "straight_days", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", "77"], ["habit_id", "206"], ["straight_days", "0"], ["created_at", "2020-07-09 14:02:54.787878"], ["updated_at", "2020-07-09 14:02:54.787878"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHabit Create (0.3ms)[0m  [1m[32mINSERT INTO "habits" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Cooking"], ["description", "A nice habit!"], ["created_at", "2020-07-09 14:02:54.791178"], ["updated_at", "2020-07-09 14:02:54.791178"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" ORDER BY "habits"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 76], ["LIMIT", 1]]
+  [1m[36mHabit Load (0.0ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 207], ["LIMIT", 1]]
+  [1m[36mUserHabit Create (0.4ms)[0m  [1m[32mINSERT INTO "user_habits" ("user_id", "habit_id", "straight_days", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", "76"], ["habit_id", "207"], ["straight_days", "0"], ["created_at", "2020-07-09 14:02:54.799721"], ["updated_at", "2020-07-09 14:02:54.799721"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+Started POST "/users/login" for ::1 at 2020-07-09 09:03:35 -0500
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#login as */*
+  Parameters: {"email"=>"emilioquintana90@gmail.com", "do"=>"users#login", "user"=>{}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = ? LIMIT ?[0m  [["email_address", "emilioquintana90@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `login'
+[active_model_serializers]   [1m[36mUserHabit Load (0.6ms)[0m  [1m[34mSELECT "user_habits".* FROM "user_habits" WHERE "user_habits"."user_id" = ?[0m  [["user_id", "76"]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:15:in `map'
+[active_model_serializers]   [1m[36mHabit Load (0.4ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 203], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 204], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 207], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mFriendship Load (0.5ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships" WHERE "friendships"."user_2_id" = ?[0m  [["user_2_id", 76]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:5:in `map'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (35.95ms)
+Completed 200 OK in 56ms (Views: 41.0ms | ActiveRecord: 4.3ms | Allocations: 23954)
+
+
+Started POST "/habits" for ::1 at 2020-07-09 09:03:43 -0500
+Processing by HabitsController#create as */*
+  Parameters: {"name"=>"Workout", "description"=>"asdasdasd", "id"=>"76", "habit"=>{"id"=>"76", "name"=>"Workout", "description"=>"asdasdasd"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/habits_controller.rb:3:in `create'
+  [1m[36mHabit Create (0.9ms)[0m  [1m[32mINSERT INTO "habits" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Workout"], ["description", "asdasdasd"], ["created_at", "2020-07-09 14:03:43.244034"], ["updated_at", "2020-07-09 14:03:43.244034"]]
+  ↳ app/controllers/habits_controller.rb:3:in `create'
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/habits_controller.rb:3:in `create'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/habits_controller.rb:4:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 76], ["LIMIT", 1]]
+  ↳ app/controllers/habits_controller.rb:4:in `create'
+  [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 208], ["LIMIT", 1]]
+  ↳ app/controllers/habits_controller.rb:4:in `create'
+  [1m[36mUserHabit Create (0.3ms)[0m  [1m[32mINSERT INTO "user_habits" ("user_id", "habit_id", "straight_days", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", "76"], ["habit_id", "208"], ["straight_days", "0"], ["created_at", "2020-07-09 14:03:43.278448"], ["updated_at", "2020-07-09 14:03:43.278448"]]
+  ↳ app/controllers/habits_controller.rb:4:in `create'
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/habits_controller.rb:4:in `create'
+[active_model_serializers]   [1m[36mUserHabit Load (0.2ms)[0m  [1m[34mSELECT "user_habits".* FROM "user_habits" WHERE "user_habits"."habit_id" = ? LIMIT ?[0m  [["habit_id", "208"], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/habit_serializer.rb:5:in `user_habit_id'
+[active_model_serializers]   [1m[36mCACHE UserHabit Load (0.0ms)[0m  [1m[34mSELECT "user_habits".* FROM "user_habits" WHERE "user_habits"."habit_id" = ? LIMIT ?[0m  [["habit_id", "208"], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/habit_serializer.rb:10:in `straight_days'
+[active_model_serializers] Rendered HabitSerializer with ActiveModelSerializers::Adapter::Attributes (2.12ms)
+Completed 200 OK in 45ms (Views: 5.9ms | ActiveRecord: 3.8ms | Allocations: 9165)
+
+
+Started POST "/users/login" for ::1 at 2020-07-09 09:05:15 -0500
+Processing by UsersController#login as */*
+  Parameters: {"email"=>"emilioquintana90@gmail.com", "do"=>"users#login", "user"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = ? LIMIT ?[0m  [["email_address", "emilioquintana90@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `login'
+[active_model_serializers]   [1m[36mUserHabit Load (0.2ms)[0m  [1m[34mSELECT "user_habits".* FROM "user_habits" WHERE "user_habits"."user_id" = ?[0m  [["user_id", "76"]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:15:in `map'
+[active_model_serializers]   [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 203], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 204], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 207], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 208], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mFriendship Load (0.2ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships" WHERE "friendships"."user_2_id" = ?[0m  [["user_2_id", 76]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:5:in `map'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (6.25ms)
+Completed 200 OK in 10ms (Views: 6.5ms | ActiveRecord: 0.9ms | Allocations: 5485)
+
+
+Started POST "/users/login" for ::1 at 2020-07-09 09:05:53 -0500
+Processing by UsersController#login as */*
+  Parameters: {"email"=>"emilioquintana90@gmail.com", "do"=>"users#login", "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = ? LIMIT ?[0m  [["email_address", "emilioquintana90@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `login'
+[active_model_serializers]   [1m[36mUserHabit Load (0.4ms)[0m  [1m[34mSELECT "user_habits".* FROM "user_habits" WHERE "user_habits"."user_id" = ?[0m  [["user_id", "76"]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:15:in `map'
+[active_model_serializers]   [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 203], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 204], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 207], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 208], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mFriendship Load (0.1ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships" WHERE "friendships"."user_2_id" = ?[0m  [["user_2_id", 76]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:5:in `map'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (7.76ms)
+Completed 200 OK in 10ms (Views: 7.4ms | ActiveRecord: 1.0ms | Allocations: 5483)
+
+
+Started POST "/users/login" for ::1 at 2020-07-09 09:06:30 -0500
+Processing by UsersController#login as */*
+  Parameters: {"email"=>"emilioquintana90@gmail.com", "do"=>"users#login", "user"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = ? LIMIT ?[0m  [["email_address", "emilioquintana90@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `login'
+[active_model_serializers]   [1m[36mUserHabit Load (0.4ms)[0m  [1m[34mSELECT "user_habits".* FROM "user_habits" WHERE "user_habits"."user_id" = ?[0m  [["user_id", "76"]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:15:in `map'
+[active_model_serializers]   [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 203], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 204], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 207], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 208], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mFriendship Load (0.1ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships" WHERE "friendships"."user_2_id" = ?[0m  [["user_2_id", 76]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:5:in `map'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (7.23ms)
+Completed 200 OK in 12ms (Views: 6.7ms | ActiveRecord: 1.3ms | Allocations: 5483)
+
+
+Started POST "/habits" for ::1 at 2020-07-09 09:06:37 -0500
+Processing by HabitsController#create as */*
+  Parameters: {"name"=>"Eat", "description"=>"asdasd", "id"=>"76", "habit"=>{"id"=>"76", "name"=>"Eat", "description"=>"asdasd"}}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/habits_controller.rb:3:in `create'
+  [1m[36mHabit Create (0.4ms)[0m  [1m[32mINSERT INTO "habits" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Eat"], ["description", "asdasd"], ["created_at", "2020-07-09 14:06:37.616459"], ["updated_at", "2020-07-09 14:06:37.616459"]]
+  ↳ app/controllers/habits_controller.rb:3:in `create'
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/habits_controller.rb:3:in `create'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/habits_controller.rb:4:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 76], ["LIMIT", 1]]
+  ↳ app/controllers/habits_controller.rb:4:in `create'
+  [1m[36mHabit Load (0.5ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 209], ["LIMIT", 1]]
+  ↳ app/controllers/habits_controller.rb:4:in `create'
+  [1m[36mUserHabit Create (0.3ms)[0m  [1m[32mINSERT INTO "user_habits" ("user_id", "habit_id", "straight_days", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", "76"], ["habit_id", "209"], ["straight_days", "0"], ["created_at", "2020-07-09 14:06:37.631190"], ["updated_at", "2020-07-09 14:06:37.631190"]]
+  ↳ app/controllers/habits_controller.rb:4:in `create'
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/habits_controller.rb:4:in `create'
+[active_model_serializers]   [1m[36mUserHabit Load (0.3ms)[0m  [1m[34mSELECT "user_habits".* FROM "user_habits" WHERE "user_habits"."habit_id" = ? LIMIT ?[0m  [["habit_id", "209"], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/habit_serializer.rb:5:in `user_habit_id'
+[active_model_serializers]   [1m[36mCACHE UserHabit Load (0.0ms)[0m  [1m[34mSELECT "user_habits".* FROM "user_habits" WHERE "user_habits"."habit_id" = ? LIMIT ?[0m  [["habit_id", "209"], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/habit_serializer.rb:10:in `straight_days'
+[active_model_serializers] Rendered HabitSerializer with ActiveModelSerializers::Adapter::Attributes (2.13ms)
+Completed 200 OK in 21ms (Views: 2.2ms | ActiveRecord: 5.0ms | Allocations: 8095)
+
+
+Started POST "/users/login" for ::1 at 2020-07-09 09:07:40 -0500
+Processing by UsersController#login as */*
+  Parameters: {"email"=>"emilioquintana90@gmail.com", "do"=>"users#login", "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = ? LIMIT ?[0m  [["email_address", "emilioquintana90@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `login'
+[active_model_serializers]   [1m[36mUserHabit Load (0.1ms)[0m  [1m[34mSELECT "user_habits".* FROM "user_habits" WHERE "user_habits"."user_id" = ?[0m  [["user_id", "76"]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:15:in `map'
+[active_model_serializers]   [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 203], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 204], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 207], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 208], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 209], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mFriendship Load (0.2ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships" WHERE "friendships"."user_2_id" = ?[0m  [["user_2_id", 76]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:5:in `map'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (14.75ms)
+Completed 200 OK in 17ms (Views: 14.3ms | ActiveRecord: 1.0ms | Allocations: 6265)
+
+
+Started POST "/users/login" for ::1 at 2020-07-09 09:08:00 -0500
+Processing by UsersController#login as */*
+  Parameters: {"email"=>"emilioquintana90@gmail.com", "do"=>"users#login", "user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = ? LIMIT ?[0m  [["email_address", "emilioquintana90@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `login'
+[active_model_serializers]   [1m[36mUserHabit Load (0.2ms)[0m  [1m[34mSELECT "user_habits".* FROM "user_habits" WHERE "user_habits"."user_id" = ?[0m  [["user_id", "76"]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:15:in `map'
+[active_model_serializers]   [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 203], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 204], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 207], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 208], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 209], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mFriendship Load (0.1ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships" WHERE "friendships"."user_2_id" = ?[0m  [["user_2_id", 76]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:5:in `map'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (13.99ms)
+Completed 200 OK in 17ms (Views: 13.6ms | ActiveRecord: 0.9ms | Allocations: 6265)
+
+
+Started POST "/users/login" for ::1 at 2020-07-09 09:08:12 -0500
+Processing by UsersController#login as */*
+  Parameters: {"email"=>"emilioquintana90@gmail.com", "do"=>"users#login", "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = ? LIMIT ?[0m  [["email_address", "emilioquintana90@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `login'
+[active_model_serializers]   [1m[36mUserHabit Load (0.3ms)[0m  [1m[34mSELECT "user_habits".* FROM "user_habits" WHERE "user_habits"."user_id" = ?[0m  [["user_id", "76"]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:15:in `map'
+[active_model_serializers]   [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 203], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 204], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 207], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 208], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 209], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mFriendship Load (0.1ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships" WHERE "friendships"."user_2_id" = ?[0m  [["user_2_id", 76]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:5:in `map'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (15.79ms)
+Completed 200 OK in 20ms (Views: 16.0ms | ActiveRecord: 1.1ms | Allocations: 6265)
+
+
+Started POST "/friendships" for ::1 at 2020-07-09 09:08:38 -0500
+Processing by FriendshipsController#create as */*
+  Parameters: {"email"=>"alex@gmail.com", "id"=>"76", "friendship"=>{"id"=>"76"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = ? LIMIT ?[0m  [["email_address", "alex@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/friendships_controller.rb:3:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/friendships_controller.rb:4:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 77], ["LIMIT", 1]]
+  ↳ app/controllers/friendships_controller.rb:4:in `create'
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 76], ["LIMIT", 1]]
+  ↳ app/controllers/friendships_controller.rb:4:in `create'
+  [1m[36mFriendship Create (0.3ms)[0m  [1m[32mINSERT INTO "friendships" ("user_1_id", "user_2_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_1_id", 77], ["user_2_id", 76], ["created_at", "2020-07-09 14:08:38.208491"], ["updated_at", "2020-07-09 14:08:38.208491"]]
+  ↳ app/controllers/friendships_controller.rb:4:in `create'
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/friendships_controller.rb:4:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/friendships_controller.rb:5:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 76], ["LIMIT", 1]]
+  ↳ app/controllers/friendships_controller.rb:5:in `create'
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 77], ["LIMIT", 1]]
+  ↳ app/controllers/friendships_controller.rb:5:in `create'
+  [1m[36mFriendship Create (0.3ms)[0m  [1m[32mINSERT INTO "friendships" ("user_1_id", "user_2_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_1_id", 76], ["user_2_id", 77], ["created_at", "2020-07-09 14:08:38.215617"], ["updated_at", "2020-07-09 14:08:38.215617"]]
+  ↳ app/controllers/friendships_controller.rb:5:in `create'
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/friendships_controller.rb:5:in `create'
+[active_model_serializers]   [1m[36mUserHabit Load (0.1ms)[0m  [1m[34mSELECT "user_habits".* FROM "user_habits" WHERE "user_habits"."user_id" = ?[0m  [["user_id", "77"]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:15:in `map'
+[active_model_serializers]   [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 205], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 206], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mFriendship Load (0.1ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships" WHERE "friendships"."user_2_id" = ?[0m  [["user_2_id", 77]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:5:in `map'
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 76], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:6:in `block in accepted_relationships'
+[active_model_serializers]   [1m[36mUserHabit Load (0.1ms)[0m  [1m[34mSELECT "user_habits".* FROM "user_habits" WHERE "user_habits"."user_id" = ?[0m  [["user_id", "76"]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:6:in `max_by'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (6.41ms)
+Completed 200 OK in 25ms (Views: 6.3ms | ActiveRecord: 4.0ms | Allocations: 18175)
+
+
+Started DELETE "/habits/209" for ::1 at 2020-07-09 09:08:52 -0500
+Processing by HabitsController#destroy as */*
+  Parameters: {"id"=>"209"}
+  [1m[36mHabit Load (0.2ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 209], ["LIMIT", 1]]
+  ↳ app/controllers/habits_controller.rb:9:in `destroy'
+  [1m[36mUserHabit Load (0.1ms)[0m  [1m[34mSELECT "user_habits".* FROM "user_habits" WHERE "user_habits"."habit_id" = ? LIMIT ?[0m  [["habit_id", "209"], ["LIMIT", 1]]
+  ↳ app/controllers/habits_controller.rb:10:in `destroy'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/habits_controller.rb:11:in `destroy'
+  [1m[36mHabit Destroy (0.4ms)[0m  [1m[31mDELETE FROM "habits" WHERE "habits"."id" = ?[0m  [["id", 209]]
+  ↳ app/controllers/habits_controller.rb:11:in `destroy'
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/habits_controller.rb:11:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/habits_controller.rb:12:in `destroy'
+  [1m[36mUserHabit Destroy (0.3ms)[0m  [1m[31mDELETE FROM "user_habits" WHERE "user_habits"."id" = ?[0m  [["id", 209]]
+  ↳ app/controllers/habits_controller.rb:12:in `destroy'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/habits_controller.rb:12:in `destroy'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 200 OK in 14ms (Views: 2.2ms | ActiveRecord: 3.7ms | Allocations: 5323)
+
+
+Started POST "/users/login" for ::1 at 2020-07-09 09:10:23 -0500
+Processing by UsersController#login as */*
+  Parameters: {"email"=>"emilioquintana90@gmail.com", "do"=>"users#login", "user"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = ? LIMIT ?[0m  [["email_address", "emilioquintana90@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `login'
+[active_model_serializers]   [1m[36mUserHabit Load (0.1ms)[0m  [1m[34mSELECT "user_habits".* FROM "user_habits" WHERE "user_habits"."user_id" = ?[0m  [["user_id", "76"]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:15:in `map'
+[active_model_serializers]   [1m[36mHabit Load (0.4ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 203], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mHabit Load (0.2ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 204], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 207], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mHabit Load (0.2ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 208], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mFriendship Load (0.1ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships" WHERE "friendships"."user_2_id" = ?[0m  [["user_2_id", 76]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:5:in `map'
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 77], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:6:in `block in accepted_relationships'
+[active_model_serializers]   [1m[36mUserHabit Load (0.1ms)[0m  [1m[34mSELECT "user_habits".* FROM "user_habits" WHERE "user_habits"."user_id" = ?[0m  [["user_id", "77"]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:6:in `max_by'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (18.4ms)
+Completed 200 OK in 22ms (Views: 17.6ms | ActiveRecord: 1.6ms | Allocations: 7022)
+
+
+Started DELETE "/habits/208" for ::1 at 2020-07-09 09:10:26 -0500
+Processing by HabitsController#destroy as */*
+  Parameters: {"id"=>"208"}
+  [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 208], ["LIMIT", 1]]
+  ↳ app/controllers/habits_controller.rb:9:in `destroy'
+  [1m[36mUserHabit Load (1.1ms)[0m  [1m[34mSELECT "user_habits".* FROM "user_habits" WHERE "user_habits"."habit_id" = ? LIMIT ?[0m  [["habit_id", "208"], ["LIMIT", 1]]
+  ↳ app/controllers/habits_controller.rb:10:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/habits_controller.rb:11:in `destroy'
+  [1m[36mHabit Destroy (0.4ms)[0m  [1m[31mDELETE FROM "habits" WHERE "habits"."id" = ?[0m  [["id", 208]]
+  ↳ app/controllers/habits_controller.rb:11:in `destroy'
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/habits_controller.rb:11:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/habits_controller.rb:12:in `destroy'
+  [1m[36mUserHabit Destroy (0.6ms)[0m  [1m[31mDELETE FROM "user_habits" WHERE "user_habits"."id" = ?[0m  [["id", 208]]
+  ↳ app/controllers/habits_controller.rb:12:in `destroy'
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/habits_controller.rb:12:in `destroy'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.21ms)
+Completed 200 OK in 19ms (Views: 1.7ms | ActiveRecord: 5.6ms | Allocations: 4883)
+
+
+Started POST "/users/login" for ::1 at 2020-07-09 09:10:56 -0500
+Processing by UsersController#login as */*
+  Parameters: {"email"=>"emilioquintana90@gmail.com", "do"=>"users#login", "user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = ? LIMIT ?[0m  [["email_address", "emilioquintana90@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `login'
+[active_model_serializers]   [1m[36mUserHabit Load (0.2ms)[0m  [1m[34mSELECT "user_habits".* FROM "user_habits" WHERE "user_habits"."user_id" = ?[0m  [["user_id", "76"]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:15:in `map'
+[active_model_serializers]   [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 203], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 204], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 207], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mFriendship Load (0.1ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships" WHERE "friendships"."user_2_id" = ?[0m  [["user_2_id", 76]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:5:in `map'
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 77], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:6:in `block in accepted_relationships'
+[active_model_serializers]   [1m[36mUserHabit Load (0.2ms)[0m  [1m[34mSELECT "user_habits".* FROM "user_habits" WHERE "user_habits"."user_id" = ?[0m  [["user_id", "77"]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:6:in `max_by'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (18.62ms)
+Completed 200 OK in 22ms (Views: 19.1ms | ActiveRecord: 1.0ms | Allocations: 6221)
+
+
+Started DELETE "/habits/207" for ::1 at 2020-07-09 09:10:57 -0500
+Processing by HabitsController#destroy as */*
+  Parameters: {"id"=>"207"}
+  [1m[36mHabit Load (0.2ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 207], ["LIMIT", 1]]
+  ↳ app/controllers/habits_controller.rb:9:in `destroy'
+  [1m[36mUserHabit Load (0.1ms)[0m  [1m[34mSELECT "user_habits".* FROM "user_habits" WHERE "user_habits"."habit_id" = ? LIMIT ?[0m  [["habit_id", "207"], ["LIMIT", 1]]
+  ↳ app/controllers/habits_controller.rb:10:in `destroy'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/habits_controller.rb:11:in `destroy'
+  [1m[36mHabit Destroy (0.9ms)[0m  [1m[31mDELETE FROM "habits" WHERE "habits"."id" = ?[0m  [["id", 207]]
+  ↳ app/controllers/habits_controller.rb:11:in `destroy'
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/habits_controller.rb:11:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/habits_controller.rb:12:in `destroy'
+  [1m[36mUserHabit Destroy (0.3ms)[0m  [1m[31mDELETE FROM "user_habits" WHERE "user_habits"."id" = ?[0m  [["id", 207]]
+  ↳ app/controllers/habits_controller.rb:12:in `destroy'
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/habits_controller.rb:12:in `destroy'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 200 OK in 36ms (Views: 0.4ms | ActiveRecord: 3.0ms | Allocations: 4885)
+
+
+Started POST "/users/login" for ::1 at 2020-07-09 09:12:41 -0500
+Processing by UsersController#login as */*
+  Parameters: {"email"=>"emilioquintana90@gmail.com", "do"=>"users#login", "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = ? LIMIT ?[0m  [["email_address", "emilioquintana90@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `login'
+[active_model_serializers]   [1m[36mUserHabit Load (0.1ms)[0m  [1m[34mSELECT "user_habits".* FROM "user_habits" WHERE "user_habits"."user_id" = ?[0m  [["user_id", "76"]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:15:in `map'
+[active_model_serializers]   [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 203], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mHabit Load (0.2ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 204], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mFriendship Load (0.1ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships" WHERE "friendships"."user_2_id" = ?[0m  [["user_2_id", 76]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:5:in `map'
+[active_model_serializers]   [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 77], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:6:in `block in accepted_relationships'
+[active_model_serializers]   [1m[36mUserHabit Load (0.4ms)[0m  [1m[34mSELECT "user_habits".* FROM "user_habits" WHERE "user_habits"."user_id" = ?[0m  [["user_id", "77"]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:6:in `max_by'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (11.82ms)
+Completed 200 OK in 17ms (Views: 10.3ms | ActiveRecord: 2.1ms | Allocations: 5421)
+
+
+Started DELETE "/habits/204" for ::1 at 2020-07-09 09:12:46 -0500
+Processing by HabitsController#destroy as */*
+  Parameters: {"id"=>"204"}
+  [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 204], ["LIMIT", 1]]
+  ↳ app/controllers/habits_controller.rb:9:in `destroy'
+  [1m[36mUserHabit Load (0.1ms)[0m  [1m[34mSELECT "user_habits".* FROM "user_habits" WHERE "user_habits"."habit_id" = ? LIMIT ?[0m  [["habit_id", "204"], ["LIMIT", 1]]
+  ↳ app/controllers/habits_controller.rb:10:in `destroy'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/habits_controller.rb:11:in `destroy'
+  [1m[36mHabit Destroy (0.7ms)[0m  [1m[31mDELETE FROM "habits" WHERE "habits"."id" = ?[0m  [["id", 204]]
+  ↳ app/controllers/habits_controller.rb:11:in `destroy'
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/habits_controller.rb:11:in `destroy'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/habits_controller.rb:12:in `destroy'
+  [1m[36mUserHabit Destroy (0.3ms)[0m  [1m[31mDELETE FROM "user_habits" WHERE "user_habits"."id" = ?[0m  [["id", 204]]
+  ↳ app/controllers/habits_controller.rb:12:in `destroy'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/habits_controller.rb:12:in `destroy'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.15ms)
+Completed 200 OK in 12ms (Views: 0.7ms | ActiveRecord: 3.3ms | Allocations: 4882)
+
+
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Destroy (0.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 76]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 77]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mHabit Load (0.2ms)[0m  [1m[34mSELECT "habits".* FROM "habits"[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHabit Destroy (0.3ms)[0m  [1m[31mDELETE FROM "habits" WHERE "habits"."id" = ?[0m  [["id", 203]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHabit Destroy (0.2ms)[0m  [1m[31mDELETE FROM "habits" WHERE "habits"."id" = ?[0m  [["id", 205]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHabit Destroy (0.2ms)[0m  [1m[31mDELETE FROM "habits" WHERE "habits"."id" = ?[0m  [["id", 206]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUserHabit Load (0.3ms)[0m  [1m[34mSELECT "user_habits".* FROM "user_habits"[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserHabit Destroy (0.2ms)[0m  [1m[31mDELETE FROM "user_habits" WHERE "user_habits"."id" = ?[0m  [["id", 203]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserHabit Destroy (0.3ms)[0m  [1m[31mDELETE FROM "user_habits" WHERE "user_habits"."id" = ?[0m  [["id", 205]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserHabit Destroy (0.2ms)[0m  [1m[31mDELETE FROM "user_habits" WHERE "user_habits"."id" = ?[0m  [["id", 206]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mFriendship Load (0.2ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships"[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFriendship Destroy (0.3ms)[0m  [1m[31mDELETE FROM "friendships" WHERE "friendships"."id" = ?[0m  [["id", 36]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFriendship Destroy (0.2ms)[0m  [1m[31mDELETE FROM "friendships" WHERE "friendships"."id" = ?[0m  [["id", 37]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "age", "img_url", "email_address", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Emilio"], ["age", 22], ["img_url", "www.nicepicture.com/1"], ["email_address", "emilioquintana90@gmail.com"], ["created_at", "2020-07-09 14:13:17.020532"], ["updated_at", "2020-07-09 14:13:17.020532"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "age", "img_url", "email_address", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Alex"], ["age", 34], ["img_url", "www.nicepicture.com/1"], ["email_address", "alex@gmail.com"], ["created_at", "2020-07-09 14:13:17.024065"], ["updated_at", "2020-07-09 14:13:17.024065"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHabit Create (0.4ms)[0m  [1m[32mINSERT INTO "habits" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Meditation"], ["description", "A nice habit!"], ["created_at", "2020-07-09 14:13:17.027758"], ["updated_at", "2020-07-09 14:13:17.027758"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" ORDER BY "habits"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 78], ["LIMIT", 1]]
+  [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 210], ["LIMIT", 1]]
+  [1m[36mUserHabit Create (0.2ms)[0m  [1m[32mINSERT INTO "user_habits" ("user_id", "habit_id", "straight_days", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", "78"], ["habit_id", "210"], ["straight_days", "0"], ["created_at", "2020-07-09 14:13:17.043345"], ["updated_at", "2020-07-09 14:13:17.043345"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHabit Create (0.4ms)[0m  [1m[32mINSERT INTO "habits" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Fasting"], ["description", "A nice habit!"], ["created_at", "2020-07-09 14:13:17.046115"], ["updated_at", "2020-07-09 14:13:17.046115"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" ORDER BY "habits"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 78], ["LIMIT", 1]]
+  [1m[36mHabit Load (0.0ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 211], ["LIMIT", 1]]
+  [1m[36mUserHabit Create (0.3ms)[0m  [1m[32mINSERT INTO "user_habits" ("user_id", "habit_id", "straight_days", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", "78"], ["habit_id", "211"], ["straight_days", "0"], ["created_at", "2020-07-09 14:13:17.054871"], ["updated_at", "2020-07-09 14:13:17.054871"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHabit Create (0.3ms)[0m  [1m[32mINSERT INTO "habits" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Workout"], ["description", "A nice habit!"], ["created_at", "2020-07-09 14:13:17.058090"], ["updated_at", "2020-07-09 14:13:17.058090"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" ORDER BY "habits"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 79], ["LIMIT", 1]]
+  [1m[36mHabit Load (0.0ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 212], ["LIMIT", 1]]
+  [1m[36mUserHabit Create (0.4ms)[0m  [1m[32mINSERT INTO "user_habits" ("user_id", "habit_id", "straight_days", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", "79"], ["habit_id", "212"], ["straight_days", "0"], ["created_at", "2020-07-09 14:13:17.077692"], ["updated_at", "2020-07-09 14:13:17.077692"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHabit Create (0.3ms)[0m  [1m[32mINSERT INTO "habits" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Mandarin"], ["description", "A nice habit!"], ["created_at", "2020-07-09 14:13:17.080608"], ["updated_at", "2020-07-09 14:13:17.080608"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mHabit Load (0.2ms)[0m  [1m[34mSELECT "habits".* FROM "habits" ORDER BY "habits"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 79], ["LIMIT", 1]]
+  [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 213], ["LIMIT", 1]]
+  [1m[36mUserHabit Create (0.3ms)[0m  [1m[32mINSERT INTO "user_habits" ("user_id", "habit_id", "straight_days", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", "79"], ["habit_id", "213"], ["straight_days", "0"], ["created_at", "2020-07-09 14:13:17.093401"], ["updated_at", "2020-07-09 14:13:17.093401"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHabit Create (0.3ms)[0m  [1m[32mINSERT INTO "habits" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Cooking"], ["description", "A nice habit!"], ["created_at", "2020-07-09 14:13:17.097786"], ["updated_at", "2020-07-09 14:13:17.097786"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" ORDER BY "habits"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 78], ["LIMIT", 1]]
+  [1m[36mHabit Load (0.0ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 214], ["LIMIT", 1]]
+  [1m[36mUserHabit Create (0.3ms)[0m  [1m[32mINSERT INTO "user_habits" ("user_id", "habit_id", "straight_days", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", "78"], ["habit_id", "214"], ["straight_days", "0"], ["created_at", "2020-07-09 14:13:17.107205"], ["updated_at", "2020-07-09 14:13:17.107205"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+Started POST "/users/login" for ::1 at 2020-07-09 09:13:30 -0500
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#login as */*
+  Parameters: {"email"=>"emilioquintana90@gmail.com", "do"=>"users#login", "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = ? LIMIT ?[0m  [["email_address", "emilioquintana90@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `login'
+[active_model_serializers]   [1m[36mUserHabit Load (0.1ms)[0m  [1m[34mSELECT "user_habits".* FROM "user_habits" WHERE "user_habits"."user_id" = ?[0m  [["user_id", "78"]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:15:in `map'
+[active_model_serializers]   [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 210], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 211], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 214], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mFriendship Load (0.3ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships" WHERE "friendships"."user_2_id" = ?[0m  [["user_2_id", 78]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:5:in `map'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (31.35ms)
+Completed 200 OK in 49ms (Views: 39.0ms | ActiveRecord: 2.8ms | Allocations: 23954)
+
+
+Started POST "/users/login" for ::1 at 2020-07-09 09:13:59 -0500
+Processing by UsersController#login as */*
+  Parameters: {"email"=>"emilioquintana90@gmail.com", "do"=>"users#login", "user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = ? LIMIT ?[0m  [["email_address", "emilioquintana90@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `login'
+[active_model_serializers]   [1m[36mUserHabit Load (0.1ms)[0m  [1m[34mSELECT "user_habits".* FROM "user_habits" WHERE "user_habits"."user_id" = ?[0m  [["user_id", "78"]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:15:in `map'
+[active_model_serializers]   [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 210], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 211], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 214], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mFriendship Load (0.1ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships" WHERE "friendships"."user_2_id" = ?[0m  [["user_2_id", 78]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:5:in `map'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (5.08ms)
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.5ms | Allocations: 4682)
+
+
+Started DELETE "/habits/210" for ::1 at 2020-07-09 09:14:02 -0500
+Processing by HabitsController#destroy as */*
+  Parameters: {"id"=>"210"}
+  [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 210], ["LIMIT", 1]]
+  ↳ app/controllers/habits_controller.rb:9:in `destroy'
+  [1m[36mUserHabit Load (0.1ms)[0m  [1m[34mSELECT "user_habits".* FROM "user_habits" WHERE "user_habits"."habit_id" = ? LIMIT ?[0m  [["habit_id", "210"], ["LIMIT", 1]]
+  ↳ app/controllers/habits_controller.rb:10:in `destroy'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/habits_controller.rb:11:in `destroy'
+  [1m[36mHabit Destroy (0.6ms)[0m  [1m[31mDELETE FROM "habits" WHERE "habits"."id" = ?[0m  [["id", 210]]
+  ↳ app/controllers/habits_controller.rb:11:in `destroy'
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/habits_controller.rb:11:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/habits_controller.rb:12:in `destroy'
+  [1m[36mUserHabit Destroy (0.3ms)[0m  [1m[31mDELETE FROM "user_habits" WHERE "user_habits"."id" = ?[0m  [["id", 210]]
+  ↳ app/controllers/habits_controller.rb:12:in `destroy'
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/habits_controller.rb:12:in `destroy'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 200 OK in 13ms (Views: 1.8ms | ActiveRecord: 4.0ms | Allocations: 5504)
+
+
+Started POST "/users/login" for ::1 at 2020-07-09 09:14:55 -0500
+Processing by UsersController#login as */*
+  Parameters: {"email"=>"emilioquintana90@gmail.com", "do"=>"users#login", "user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = ? LIMIT ?[0m  [["email_address", "emilioquintana90@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `login'
+[active_model_serializers]   [1m[36mUserHabit Load (0.1ms)[0m  [1m[34mSELECT "user_habits".* FROM "user_habits" WHERE "user_habits"."user_id" = ?[0m  [["user_id", "78"]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:15:in `map'
+[active_model_serializers]   [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 211], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 214], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mFriendship Load (0.1ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships" WHERE "friendships"."user_2_id" = ?[0m  [["user_2_id", 78]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:5:in `map'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (4.47ms)
+Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 0.5ms | Allocations: 3884)
+
+
+Started DELETE "/habits/214" for ::1 at 2020-07-09 09:14:57 -0500
+Processing by HabitsController#destroy as */*
+  Parameters: {"id"=>"214"}
+  [1m[36mHabit Load (0.2ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 214], ["LIMIT", 1]]
+  ↳ app/controllers/habits_controller.rb:9:in `destroy'
+  [1m[36mUserHabit Load (0.2ms)[0m  [1m[34mSELECT "user_habits".* FROM "user_habits" WHERE "user_habits"."habit_id" = ? LIMIT ?[0m  [["habit_id", "214"], ["LIMIT", 1]]
+  ↳ app/controllers/habits_controller.rb:10:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/habits_controller.rb:11:in `destroy'
+  [1m[36mHabit Destroy (0.3ms)[0m  [1m[31mDELETE FROM "habits" WHERE "habits"."id" = ?[0m  [["id", 214]]
+  ↳ app/controllers/habits_controller.rb:11:in `destroy'
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/habits_controller.rb:11:in `destroy'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/habits_controller.rb:12:in `destroy'
+  [1m[36mUserHabit Destroy (0.4ms)[0m  [1m[31mDELETE FROM "user_habits" WHERE "user_habits"."id" = ?[0m  [["id", 214]]
+  ↳ app/controllers/habits_controller.rb:12:in `destroy'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/habits_controller.rb:12:in `destroy'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+Completed 200 OK in 14ms (Views: 0.4ms | ActiveRecord: 2.8ms | Allocations: 4900)
+
+
+Started DELETE "/habits/211" for ::1 at 2020-07-09 09:14:58 -0500
+Processing by HabitsController#destroy as */*
+  Parameters: {"id"=>"211"}
+  [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 211], ["LIMIT", 1]]
+  ↳ app/controllers/habits_controller.rb:9:in `destroy'
+  [1m[36mUserHabit Load (0.3ms)[0m  [1m[34mSELECT "user_habits".* FROM "user_habits" WHERE "user_habits"."habit_id" = ? LIMIT ?[0m  [["habit_id", "211"], ["LIMIT", 1]]
+  ↳ app/controllers/habits_controller.rb:10:in `destroy'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/habits_controller.rb:11:in `destroy'
+  [1m[36mHabit Destroy (1.3ms)[0m  [1m[31mDELETE FROM "habits" WHERE "habits"."id" = ?[0m  [["id", 211]]
+  ↳ app/controllers/habits_controller.rb:11:in `destroy'
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/habits_controller.rb:11:in `destroy'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/habits_controller.rb:12:in `destroy'
+  [1m[36mUserHabit Destroy (0.5ms)[0m  [1m[31mDELETE FROM "user_habits" WHERE "user_habits"."id" = ?[0m  [["id", 211]]
+  ↳ app/controllers/habits_controller.rb:12:in `destroy'
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/habits_controller.rb:12:in `destroy'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 200 OK in 16ms (Views: 0.5ms | ActiveRecord: 5.8ms | Allocations: 4882)
+
+
+Started POST "/users/login" for ::1 at 2020-07-09 09:15:09 -0500
+Processing by UsersController#login as */*
+  Parameters: {"email"=>"emilioquintana90@gmail.com", "do"=>"users#login", "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = ? LIMIT ?[0m  [["email_address", "emilioquintana90@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `login'
+[active_model_serializers]   [1m[36mUserHabit Load (0.2ms)[0m  [1m[34mSELECT "user_habits".* FROM "user_habits" WHERE "user_habits"."user_id" = ?[0m  [["user_id", "78"]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:15:in `map'
+[active_model_serializers]   [1m[36mFriendship Load (0.1ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships" WHERE "friendships"."user_2_id" = ?[0m  [["user_2_id", 78]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:5:in `map'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (5.33ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.5ms | Allocations: 2672)
+
+
+  
+NoMethodError (undefined method `straight_days' for nil:NilClass):
+  
+app/serializers/user_serializer.rb:27:in `straight_days'
+app/controllers/users_controller.rb:10:in `login'
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 78]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 79]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mHabit Load (0.2ms)[0m  [1m[34mSELECT "habits".* FROM "habits"[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHabit Destroy (0.3ms)[0m  [1m[31mDELETE FROM "habits" WHERE "habits"."id" = ?[0m  [["id", 212]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHabit Destroy (0.3ms)[0m  [1m[31mDELETE FROM "habits" WHERE "habits"."id" = ?[0m  [["id", 213]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUserHabit Load (0.2ms)[0m  [1m[34mSELECT "user_habits".* FROM "user_habits"[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserHabit Destroy (0.2ms)[0m  [1m[31mDELETE FROM "user_habits" WHERE "user_habits"."id" = ?[0m  [["id", 212]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUserHabit Destroy (0.2ms)[0m  [1m[31mDELETE FROM "user_habits" WHERE "user_habits"."id" = ?[0m  [["id", 213]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mFriendship Load (0.2ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships"[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "age", "img_url", "email_address", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Emilio"], ["age", 22], ["img_url", "www.nicepicture.com/1"], ["email_address", "emilioquintana90@gmail.com"], ["created_at", "2020-07-09 14:15:29.966451"], ["updated_at", "2020-07-09 14:15:29.966451"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "age", "img_url", "email_address", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Alex"], ["age", 34], ["img_url", "www.nicepicture.com/1"], ["email_address", "alex@gmail.com"], ["created_at", "2020-07-09 14:15:29.970148"], ["updated_at", "2020-07-09 14:15:29.970148"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHabit Create (0.3ms)[0m  [1m[32mINSERT INTO "habits" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Meditation"], ["description", "A nice habit!"], ["created_at", "2020-07-09 14:15:29.973695"], ["updated_at", "2020-07-09 14:15:29.973695"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" ORDER BY "habits"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 80], ["LIMIT", 1]]
+  [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 215], ["LIMIT", 1]]
+  [1m[36mUserHabit Create (0.3ms)[0m  [1m[32mINSERT INTO "user_habits" ("user_id", "habit_id", "straight_days", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", "80"], ["habit_id", "215"], ["straight_days", "0"], ["created_at", "2020-07-09 14:15:29.989677"], ["updated_at", "2020-07-09 14:15:29.989677"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHabit Create (0.3ms)[0m  [1m[32mINSERT INTO "habits" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Fasting"], ["description", "A nice habit!"], ["created_at", "2020-07-09 14:15:29.993863"], ["updated_at", "2020-07-09 14:15:29.993863"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" ORDER BY "habits"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 80], ["LIMIT", 1]]
+  [1m[36mHabit Load (0.0ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 216], ["LIMIT", 1]]
+  [1m[36mUserHabit Create (0.3ms)[0m  [1m[32mINSERT INTO "user_habits" ("user_id", "habit_id", "straight_days", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", "80"], ["habit_id", "216"], ["straight_days", "0"], ["created_at", "2020-07-09 14:15:30.001515"], ["updated_at", "2020-07-09 14:15:30.001515"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHabit Create (0.3ms)[0m  [1m[32mINSERT INTO "habits" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Workout"], ["description", "A nice habit!"], ["created_at", "2020-07-09 14:15:30.004907"], ["updated_at", "2020-07-09 14:15:30.004907"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" ORDER BY "habits"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 81], ["LIMIT", 1]]
+  [1m[36mHabit Load (0.0ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 217], ["LIMIT", 1]]
+  [1m[36mUserHabit Create (0.3ms)[0m  [1m[32mINSERT INTO "user_habits" ("user_id", "habit_id", "straight_days", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", "81"], ["habit_id", "217"], ["straight_days", "0"], ["created_at", "2020-07-09 14:15:30.013347"], ["updated_at", "2020-07-09 14:15:30.013347"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHabit Create (0.4ms)[0m  [1m[32mINSERT INTO "habits" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Mandarin"], ["description", "A nice habit!"], ["created_at", "2020-07-09 14:15:30.016497"], ["updated_at", "2020-07-09 14:15:30.016497"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" ORDER BY "habits"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 81], ["LIMIT", 1]]
+  [1m[36mHabit Load (0.0ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 218], ["LIMIT", 1]]
+  [1m[36mUserHabit Create (0.3ms)[0m  [1m[32mINSERT INTO "user_habits" ("user_id", "habit_id", "straight_days", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", "81"], ["habit_id", "218"], ["straight_days", "0"], ["created_at", "2020-07-09 14:15:30.023987"], ["updated_at", "2020-07-09 14:15:30.023987"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHabit Create (0.3ms)[0m  [1m[32mINSERT INTO "habits" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Cooking"], ["description", "A nice habit!"], ["created_at", "2020-07-09 14:15:30.043450"], ["updated_at", "2020-07-09 14:15:30.043450"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" ORDER BY "habits"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 80], ["LIMIT", 1]]
+  [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 219], ["LIMIT", 1]]
+  [1m[36mUserHabit Create (0.3ms)[0m  [1m[32mINSERT INTO "user_habits" ("user_id", "habit_id", "straight_days", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", "80"], ["habit_id", "219"], ["straight_days", "0"], ["created_at", "2020-07-09 14:15:30.051288"], ["updated_at", "2020-07-09 14:15:30.051288"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+Started POST "/users/login" for ::1 at 2020-07-09 09:15:41 -0500
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#login as */*
+  Parameters: {"email"=>"emilioquintana90@gmail.com", "do"=>"users#login", "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = ? LIMIT ?[0m  [["email_address", "emilioquintana90@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `login'
+[active_model_serializers]   [1m[36mUserHabit Load (0.1ms)[0m  [1m[34mSELECT "user_habits".* FROM "user_habits" WHERE "user_habits"."user_id" = ?[0m  [["user_id", "80"]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:15:in `map'
+[active_model_serializers]   [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 215], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 216], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 219], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mFriendship Load (0.1ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships" WHERE "friendships"."user_2_id" = ?[0m  [["user_2_id", 80]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:5:in `map'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (28.93ms)
+Completed 200 OK in 44ms (Views: 35.4ms | ActiveRecord: 2.4ms | Allocations: 23954)
+
+
+Started POST "/habits" for ::1 at 2020-07-09 09:16:29 -0500
+Processing by HabitsController#create as */*
+  Parameters: {"name"=>"asdasd", "description"=>"asdasdas", "id"=>"80", "habit"=>{"id"=>"80", "name"=>"asdasd", "description"=>"asdasdas"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/habits_controller.rb:3:in `create'
+  [1m[36mHabit Create (0.4ms)[0m  [1m[32mINSERT INTO "habits" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "asdasd"], ["description", "asdasdas"], ["created_at", "2020-07-09 14:16:29.822047"], ["updated_at", "2020-07-09 14:16:29.822047"]]
+  ↳ app/controllers/habits_controller.rb:3:in `create'
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/habits_controller.rb:3:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/habits_controller.rb:4:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 80], ["LIMIT", 1]]
+  ↳ app/controllers/habits_controller.rb:4:in `create'
+  [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 220], ["LIMIT", 1]]
+  ↳ app/controllers/habits_controller.rb:4:in `create'
+  [1m[36mUserHabit Create (0.4ms)[0m  [1m[32mINSERT INTO "user_habits" ("user_id", "habit_id", "straight_days", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", "80"], ["habit_id", "220"], ["straight_days", "0"], ["created_at", "2020-07-09 14:16:29.851068"], ["updated_at", "2020-07-09 14:16:29.851068"]]
+  ↳ app/controllers/habits_controller.rb:4:in `create'
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/habits_controller.rb:4:in `create'
+[active_model_serializers]   [1m[36mUserHabit Load (0.2ms)[0m  [1m[34mSELECT "user_habits".* FROM "user_habits" WHERE "user_habits"."habit_id" = ? LIMIT ?[0m  [["habit_id", "220"], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/habit_serializer.rb:5:in `user_habit_id'
+[active_model_serializers]   [1m[36mCACHE UserHabit Load (0.0ms)[0m  [1m[34mSELECT "user_habits".* FROM "user_habits" WHERE "user_habits"."habit_id" = ? LIMIT ?[0m  [["habit_id", "220"], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/habit_serializer.rb:10:in `straight_days'
+[active_model_serializers] Rendered HabitSerializer with ActiveModelSerializers::Adapter::Attributes (2.11ms)
+Completed 200 OK in 36ms (Views: 3.1ms | ActiveRecord: 3.3ms | Allocations: 9098)
+
+
+Started DELETE "/habits/NaN" for ::1 at 2020-07-09 09:16:31 -0500
+Processing by HabitsController#destroy as */*
+  Parameters: {"id"=>"NaN"}
+  [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/habits_controller.rb:9:in `destroy'
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms | Allocations: 732)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Habit with 'id'=NaN):
+  
+app/controllers/habits_controller.rb:9:in `destroy'
+Started POST "/users/login" for ::1 at 2020-07-09 09:17:20 -0500
+Processing by UsersController#login as */*
+  Parameters: {"email"=>"emilioquintana90@gmail.com", "do"=>"users#login", "user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = ? LIMIT ?[0m  [["email_address", "emilioquintana90@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `login'
+[active_model_serializers]   [1m[36mUserHabit Load (0.1ms)[0m  [1m[34mSELECT "user_habits".* FROM "user_habits" WHERE "user_habits"."user_id" = ?[0m  [["user_id", "80"]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:15:in `map'
+[active_model_serializers]   [1m[36mHabit Load (0.5ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 215], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 216], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 219], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 220], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:17:in `block in user_habits'
+[active_model_serializers]   [1m[36mFriendship Load (0.1ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships" WHERE "friendships"."user_2_id" = ?[0m  [["user_2_id", 80]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:5:in `map'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (11.35ms)
+Completed 200 OK in 13ms (Views: 10.6ms | ActiveRecord: 1.2ms | Allocations: 5484)
+
+
+Started DELETE "/habits/220" for ::1 at 2020-07-09 09:17:22 -0500
+Processing by HabitsController#destroy as */*
+  Parameters: {"id"=>"220"}
+  [1m[36mHabit Load (0.1ms)[0m  [1m[34mSELECT "habits".* FROM "habits" WHERE "habits"."id" = ? LIMIT ?[0m  [["id", 220], ["LIMIT", 1]]
+  ↳ app/controllers/habits_controller.rb:9:in `destroy'
+  [1m[36mUserHabit Load (0.1ms)[0m  [1m[34mSELECT "user_habits".* FROM "user_habits" WHERE "user_habits"."habit_id" = ? LIMIT ?[0m  [["habit_id", "220"], ["LIMIT", 1]]
+  ↳ app/controllers/habits_controller.rb:10:in `destroy'
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/habits_controller.rb:11:in `destroy'
+  [1m[36mHabit Destroy (0.3ms)[0m  [1m[31mDELETE FROM "habits" WHERE "habits"."id" = ?[0m  [["id", 220]]
+  ↳ app/controllers/habits_controller.rb:11:in `destroy'
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/habits_controller.rb:11:in `destroy'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/habits_controller.rb:12:in `destroy'
+  [1m[36mUserHabit Destroy (0.3ms)[0m  [1m[31mDELETE FROM "user_habits" WHERE "user_habits"."id" = ?[0m  [["id", 220]]
+  ↳ app/controllers/habits_controller.rb:12:in `destroy'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/habits_controller.rb:12:in `destroy'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 200 OK in 23ms (Views: 8.1ms | ActiveRecord: 4.9ms | Allocations: 6682)
+
+
