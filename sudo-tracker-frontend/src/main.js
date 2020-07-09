@@ -19,9 +19,10 @@ const loginForm = document.querySelector(".login-form");
 
 ///// MISC /////
 let email_address = "";
+const modalHeader = document.querySelector('.modal-body')
+const alertContainer = document.querySelector('.alert-container')
 
 ///// ALERTS /////
-$(".alert").alert("close");
 
 ///////////////////MAIN///////////////////////
 function main() {
@@ -30,6 +31,7 @@ function main() {
 
 function modalHandler() {
   if (modalOpen) {
+  
     $("#loginModal").modal("show");
   } else {
     $("#loginModal").modal("hide");
@@ -37,7 +39,7 @@ function modalHandler() {
 }
 
 ///// FETCHING && RENDERING FUNCTIONS /////
-function fetchUserData(email) {
+function fetchUserData(email) { 
   email_address = email;
   configObj = {
     method: "POST",
@@ -50,11 +52,29 @@ function fetchUserData(email) {
   };
   fetch("http://localhost:3000/users/login", configObj)
     .then((resp) => resp.json())
-    .then((userData) => {
-      renderUserData(userData);
+    .then((userData) => { 
+      
+      handleInvalidLogin(userData);
     })
-    .catch((err) => console.log(err));
+    .catch((err) => { 
+      console.log(err);
+    })
 }
+
+function handleInvalidLogin(userData){
+  if (userData === null) {
+    const errorMessage = `<p style="color:red;">Sorry we can't find that email</p>`
+    modalHeader.innerHTML += errorMessage
+    modalOpen = true;
+    modalHandler();
+  } else {
+    modalOpen = false;
+    modalHandler();
+    renderUserData(userData)
+  };
+}
+
+
 
 function renderUserData(userData) {
   userNameContainer.innerHTML = `
@@ -90,11 +110,14 @@ function renderHabits(userData) {
 function loginHandler() {
   event.preventDefault();
   const email = event.target["email"].value;
-  modalOpen = false;
-  modalHandler();
   fetchUserData(email);
   event.target.reset();
 }
+
+// function handleUserLogin(userData){
+  
+  
+// }
 
 function toggleHabitHandler() {
   addHabit = !addHabit;
@@ -148,9 +171,17 @@ function submitNewFriend(email) {
   fetch("http://localhost:3000/friendships", configObj)
     .then((resp) => resp.json())
     .then((friend) => {
+      if (friend.error) {
+        alertContainer.innerHTML = `<div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>`
+      } else {
       friendsContainer.innerHTML += `
       <tr><td>${friend.name}</td></tr>
-    `;
+    `;}
     })
     .catch((err) => console.log(err));
 }
@@ -172,11 +203,11 @@ function submitNewHabit(habitName, habitDescription) {
 
   fetch("http://localhost:3000/habits", configObj)
     .then((resp) => resp.json())
-    .then((habit) => {
+    .then((habit) => { 
       const index = habitsContainer.children.length;
 
       habitsContainer.innerHTML += `
-      <tr><td id=${index} data-user-habit-id=${habit.user_habit_id}>${habit.name}<button data-habit-id=${habit.habit_id} id='btn-delete' class="btn btn-danger btn-sm">x</button></td></tr>
+      <tr><td id=${index} data-user-habit-id=${habit.user_habit_id}>${habit.name}<button data-habit-id=${habit.id} id='btn-delete' class="btn btn-danger btn-sm">x</button></td></tr>
       
     `;
 
