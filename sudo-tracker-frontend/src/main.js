@@ -132,6 +132,7 @@ function renderFriendModal(friendData) {
   modalFriendBody.innerHTML += `
     <img src=${friendData.img_url}  width="215px" height="200px"/>
   `;
+  modalFriendBody.innerHTML += `<hr>`;
   // Render titles
   modalFriendBody.innerHTML += `<h4>Habits</h4>`;
   // Render Habits and Straight Days
