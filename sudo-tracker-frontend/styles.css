@@ -30,23 +30,41 @@ body {
   font-size: 16px;
 }
 
+main {
+  margin-top: 3.33%;
+}
+
 .row {
   width: 75%;
   text-align: center;
 }
 
-li {
+td {
   font-size: 20px;
 }
 
 /*  FORMS STYLE  */
 
 .forms {
-  width: 35%;
+  width: 20%;
   margin-left: 50px;
 }
 
 .add-habit-form,
 .add-friend-form {
   display: none;
+}
+
+/* MODAL STYLE */
+.friend-modal-body {
+  text-align: center;
+}
+
+.friend-modal-body h4 {
+  text-decoration: underline;
+}
+
+img {
+  margin: 3%;
+  border-radius: 50%;
 }

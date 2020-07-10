@@ -22,13 +22,15 @@
       <div class="name-container">
         <h1>Welcome</h1>
       </div>
-      <hr />
     </div>
   </header>
 
   <body>
-    <div class='alert-container'></div>
+    <div class="alert-container"></div>
+    <div class="welcome-alert-container"></div>
+
     <main>
+      <!-- LOGIN MODAL -->
       <div
         class="modal fade"
         id="loginModal"
@@ -43,7 +45,6 @@
               <h2 class="modal-title" id="exampleModalLabel">
                 Welcome to Sudo Tracker!
               </h2>
-              
             </div>
             <div class="modal-body">
               <form class="login-form">
@@ -71,6 +72,27 @@
             <div class="modal-footer">
               <p>Developed by Emilio Quintana and Alex Grimes &copy; 2020</p>
             </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FRIEND MODAL -->
+      <div
+        class="modal fade"
+        id="friendModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2 class="friend-modal-title" id="exampleModalLabel">
+                Friend Modal
+              </h2>
+            </div>
+            <div class="friend-modal-body"></div>
           </div>
         </div>
       </div>
@@ -112,6 +134,7 @@
         </div>
       </div>
     </main>
+
     <div class="forms">
       <br />
       <form class="add-habit-form">
@@ -122,21 +145,14 @@
           placeholder="Enter habit"
           class="form-control"
         />
-        <br />
-        <input
-          type="text"
-          name="description"
-          value=""
-          placeholder="Enter description"
-          class="form-control"
-        />
+
         <br />
 
         <input
           type="submit"
           name="submit"
           value="Create New Habit"
-          class="btn btn-primary"
+          class="btn btn-primary btn-lg"
         />
       </form>
       <br />
@@ -153,7 +169,7 @@
           type="submit"
           name="submit"
           value="Add Friend"
-          class="btn btn-primary"
+          class="btn btn-primary btn-lg"
         />
       </form>
     </div>

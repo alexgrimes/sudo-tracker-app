@@ -1,6 +1,7 @@
 let addHabit = false;
 let addFriend = false;
 let modalOpen = true;
+let friendModalOpen = false;
 
 ///// CONTAINERS /////
 const habitsContainer = document.querySelector("#habits-table");
@@ -19,10 +20,12 @@ const loginForm = document.querySelector(".login-form");
 
 ///// MISC /////
 let email_address = "";
-const modalHeader = document.querySelector('.modal-body')
-const alertContainer = document.querySelector('.alert-container')
-
-///// ALERTS /////
+const modalBody = document.querySelector(".modal-body");
+const modalFriendBody = document.querySelector(".friend-modal-body");
+const alertContainer = document.querySelector(".alert-container");
+const welcomeAlertContainer = document.querySelector(
+  ".welcome-alert-container"
+);
 
 ///////////////////MAIN///////////////////////
 function main() {
@@ -31,7 +34,6 @@ function main() {
 
 function modalHandler() {
   if (modalOpen) {
-  
     $("#loginModal").modal("show");
   } else {
     $("#loginModal").modal("hide");
@@ -39,7 +41,7 @@ function modalHandler() {
 }
 
 ///// FETCHING && RENDERING FUNCTIONS /////
-function fetchUserData(email) { 
+function fetchUserData(email) {
   email_address = email;
   configObj = {
     method: "POST",
@@ -52,42 +54,47 @@ function fetchUserData(email) {
   };
   fetch("http://localhost:3000/users/login", configObj)
     .then((resp) => resp.json())
-    .then((userData) => { 
-      
+    .then((userData) => {
       handleInvalidLogin(userData);
     })
-    .catch((err) => { 
+    .catch((err) => {
       console.log(err);
-    })
+    });
 }
 
-function handleInvalidLogin(userData){
+function handleInvalidLogin(userData) {
   if (userData === null) {
-    const errorMessage = `<p style="color:red;">Sorry we can't find that email</p>`
-    modalHeader.innerHTML += errorMessage
-    modalOpen = true;
-    modalHandler();
+    modalBody.append("Sorry we can't find that email");
   } else {
     modalOpen = false;
     modalHandler();
-    renderUserData(userData)
-  };
+    renderUserData(userData);
+  }
 }
 
-
-
 function renderUserData(userData) {
+  renderWelcomeAlert();
   userNameContainer.innerHTML = `
   <h1 data-user-id=${userData.id}>Welcome, ${userData.name}!</h1>
   `;
+
   renderHabits(userData);
   renderFriends(userData);
+}
+
+function renderWelcomeAlert() {
+  welcomeAlertContainer.innerHTML = `<div class="alert alert-success alert-dismissible fade show" role="alert">
+  Mark your habits as completed by clicking on them!
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>`;
 }
 
 function renderFriends(userData) {
   userData.accepted_relationships.forEach((friend) => {
     friendsContainer.innerHTML += `
-    <tr><td>${friend.name}</td></tr>
+    <tr><td data-friend-id=${friend.id}>${friend.name}</td></tr>
     `;
   });
 }
@@ -106,6 +113,35 @@ function renderHabits(userData) {
   });
 }
 
+function renderFriendsHabits(friendId) {
+  fetch("http://localhost:3000/users" + "/" + friendId)
+    .then((resp) => resp.json())
+    .then((friendData) => renderFriendModal(friendData))
+    .catch((err) => console.log(err));
+}
+
+function renderFriendModal(friendData) {
+  // Clear the modal
+  modalFriendBody.innerHTML = "";
+  // Show the modal
+  $("#friendModal").modal("show");
+  // Render name
+  const friendModalTittle = document.querySelector(".friend-modal-title");
+  friendModalTittle.innerText = friendData.name;
+  // Render profile picture
+  modalFriendBody.innerHTML += `
+    <img src=${friendData.img_url}  width="215px" height="200px"/>
+  `;
+  // Render titles
+  modalFriendBody.innerHTML += `<h4>Habits</h4>`;
+  // Render Habits and Straight Days
+  friendData.user_habits.forEach((habit) => {
+    modalFriendBody.innerHTML += `
+    <div><p>${habit.name}: ${habit.straight_days} straight days</p></div>
+    `;
+  });
+}
+
 ////// FORM HANDLERS /////
 function loginHandler() {
   event.preventDefault();
@@ -113,11 +149,6 @@ function loginHandler() {
   fetchUserData(email);
   event.target.reset();
 }
-
-// function handleUserLogin(userData){
-  
-  
-// }
 
 function toggleHabitHandler() {
   addHabit = !addHabit;
@@ -137,12 +168,11 @@ function toggleFriendHandler() {
   }
 }
 
-////// FROM SCRAPING FUNCTIONS /////
+////// FORM SCRAPING FUNCTIONS /////
 function newHabitHandler() {
   event.preventDefault();
   const habitName = event.target["name"].value;
-  const habitDescription = event.target["description"].value;
-  submitNewHabit(habitName, habitDescription);
+  submitNewHabit(habitName);
   event.target.reset();
 }
 
@@ -173,20 +203,21 @@ function submitNewFriend(email) {
     .then((friend) => {
       if (friend.error) {
         alertContainer.innerHTML = `<div class="alert alert-danger alert-dismissible fade show" role="alert">
-        <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+        Seems like you tried to sign in as a user that is not registered. Please, try again.
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
-      </div>`
+      </div>`;
       } else {
-      friendsContainer.innerHTML += `
+        friendsContainer.innerHTML += `
       <tr><td>${friend.name}</td></tr>
-    `;}
+    `;
+      }
     })
     .catch((err) => console.log(err));
 }
 
-function submitNewHabit(habitName, habitDescription) {
+function submitNewHabit(habitName) {
   const userId = userNameContainer.children[0].dataset.userId;
 
   configObj = {
@@ -196,14 +227,14 @@ function submitNewHabit(habitName, habitDescription) {
     },
     body: JSON.stringify({
       name: habitName,
-      description: habitDescription,
       id: userId,
     }),
   };
 
   fetch("http://localhost:3000/habits", configObj)
     .then((resp) => resp.json())
-    .then((habit) => { 
+    .then((habit) => {
+      debugger;
       const index = habitsContainer.children.length;
 
       habitsContainer.innerHTML += `
@@ -274,6 +305,13 @@ function addDaysStraight() {
   }
 }
 
+function friendModalHandler() {
+  if (event.target.nodeName == "TD") {
+    const friendId = event.target.dataset.friendId;
+    renderFriendsHabits(friendId);
+  }
+}
+
 ///////////////////EVENT LISTENERS///////////////////////
 addHabitButton.addEventListener("click", toggleHabitHandler);
 addFriendButton.addEventListener("click", toggleFriendHandler);
@@ -281,6 +319,7 @@ addHabitForm.addEventListener("submit", newHabitHandler);
 addFriendForm.addEventListener("submit", newFriendHandler);
 loginForm.addEventListener("submit", loginHandler);
 habitsContainer.addEventListener("click", addDaysStraight);
+friendsContainer.addEventListener("click", friendModalHandler);
 
 ///////////////////INVOCATIONS///////////////////////
 main();
