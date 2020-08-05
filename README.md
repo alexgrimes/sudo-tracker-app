@@ -1,14 +1,30 @@
-# Sudo Tracker 1.0
+# SudoTracker
 
-Sudo Tracker is a web-application made with a Rails Api Backend and a HTML/CSS/JavaScript - React frontend. The API supports end points for users, habits and userHabits. Bootstrap was used for styling and Active Record Serializer for managing the data coming back from the API endpoints.
+Users can create, edit, delete and keep track of how many days they have performed a certain habit. They can also add friends and check what habits they are working on and how many days they have done it.
 
-## Installation
+# Demo 🖥️
 
-~~~
-git clone https://github.com/emilio-quintana-dev/sudo_tracker_app
-cd sudo-tracker-app
-npm i && npm run start
-~~~
+Coming soon...
 
-This will start a local server and run the web-app in the default browser.
+# Screenshots 📷
+
+Coming soon...
+
+
+# Built with 🔧
+* HTMLL
+* CSS
+* JavaScript
+* Ruby on Rails
+* Bootstrap
+* Sqlite3
+
+# Features 🌟
+* Built backend using Ruby on Rails and a SQlite3 Database.
+* Designed and styled using Bootstrap.
+* Currently working on deploying both backend and frontend to Heroku.
+
+# License 
+
+MIT [Emilio Quintana]
 
